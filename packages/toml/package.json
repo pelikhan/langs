@@ -4,12 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "node build.js && tree-sitter build -o parser.so"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
+  "dependencies": {
+    "tree-sitter-cli": "0.24.6",
     "@tree-sitter-grammars/tree-sitter-toml": "0.7.0"
+  },
+  "devDependencies": {
+    "@ast-grep/napi": "0.33.0"
   }
 }

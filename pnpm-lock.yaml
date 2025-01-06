@@ -9,12 +9,77 @@ importers:
   .: {}
 
   packages/toml:
-    devDependencies:
+    dependencies:
       '@tree-sitter-grammars/tree-sitter-toml':
         specifier: 0.7.0
         version: 0.7.0
+      tree-sitter-cli:
+        specifier: 0.24.6
+        version: 0.24.6
+    devDependencies:
+      '@ast-grep/napi':
+        specifier: 0.33.0
+        version: 0.33.0
 
 packages:
+
+  '@ast-grep/napi-darwin-arm64@0.33.0':
+    resolution: {integrity: sha512-FsBQiBNGbqeU6z2sjFgnV6MXuBa0wYUb4PViMnqsKLeWiO7kRii5crmXLCtdTD2hufXTG6Rll8X46AkYOAwGGQ==}
+    engines: {node: '>= 10'}
+    cpu: [arm64]
+    os: [darwin]
+
+  '@ast-grep/napi-darwin-x64@0.33.0':
+    resolution: {integrity: sha512-rWo1wG7fc7K20z9ExIeN6U4QqjHhoQSpBDDnmxKTR0nIwPfyMq338sS4sWZomutxprcZDtWrekxH1lXjNvfuiA==}
+    engines: {node: '>= 10'}
+    cpu: [x64]
+    os: [darwin]
+
+  '@ast-grep/napi-linux-arm64-gnu@0.33.0':
+    resolution: {integrity: sha512-3ZnA2k57kxfvLg4s9+6rHaCx1FbWt0EF8fumJMf5nwevu7GbVOOhCkzAetZe80FBgZuIOSR4IS2QMj9ZHI0UdQ==}
+    engines: {node: '>= 10'}
+    cpu: [arm64]
+    os: [linux]
+
+  '@ast-grep/napi-linux-arm64-musl@0.33.0':
+    resolution: {integrity: sha512-oUGZgCaVCijFgvC+X52ttgoWUqgrIsSVJZgn+1VBY3n4mpzcoYAghFomSUbRTBUL2ebvZweA33Klqks4okY61w==}
+    engines: {node: '>= 10'}
+    cpu: [arm64]
+    os: [linux]
+
+  '@ast-grep/napi-linux-x64-gnu@0.33.0':
+    resolution: {integrity: sha512-QTAkfxQSsOGRza0hnkeAgJDQqR00iDerRNq42dOGIzgF+Kse491By3UmBEMG4oCbv17yYcBBlknQkzKSKtigjw==}
+    engines: {node: '>= 10'}
+    cpu: [x64]
+    os: [linux]
+
+  '@ast-grep/napi-linux-x64-musl@0.33.0':
+    resolution: {integrity: sha512-PW6bZO7MyQsBNZv0idI/Ah6ak66T8LqZ21wBGjtQp9NDGViOtkLeu+eJJGaZjMqUdidKHKgmMKXksZHl2m8ulQ==}
+    engines: {node: '>= 10'}
+    cpu: [x64]
+    os: [linux]
+
+  '@ast-grep/napi-win32-arm64-msvc@0.33.0':
+    resolution: {integrity: sha512-ijmFQcFc32JOIQlSfnhDJpb3qFb2RhrRqfeY0EHHN1xRSGwZHfsHTSS66nKR2sREmxTIMgxXOtylKicbyyMVKA==}
+    engines: {node: '>= 10'}
+    cpu: [arm64]
+    os: [win32]
+
+  '@ast-grep/napi-win32-ia32-msvc@0.33.0':
+    resolution: {integrity: sha512-NNIb2VK3Z2BwKp0QJSw8gkhwOUp85SgTsxJ38p+wIUAA/KzAKCJOmyOaZ301qGHt4gL+jTHgTIvJJX+9eT/REg==}
+    engines: {node: '>= 10'}
+    cpu: [ia32]
+    os: [win32]
+
+  '@ast-grep/napi-win32-x64-msvc@0.33.0':
+    resolution: {integrity: sha512-gW7viQQjdPA1HoCkpCqoonC81TOwcpP828w/XqZFE/L6uhD8SF2usul8KNBQOiX3O7/fqYEOnbtWMCrwZIqG1Q==}
+    engines: {node: '>= 10'}
+    cpu: [x64]
+    os: [win32]
+
+  '@ast-grep/napi@0.33.0':
+    resolution: {integrity: sha512-6heRMmomhSD0dkummRQ+R4xWXXmc41OaDPoPI49mKJXPyvwJPdPZUcQjXdIitOVL4uJV+qM2ZBucDPENDBSixw==}
+    engines: {node: '>= 10'}
 
   '@tree-sitter-grammars/tree-sitter-toml@0.7.0':
     resolution: {integrity: sha512-873Kl518Qm5ghbWadISY41rwFjee0v+2bU4twwvAw2VAJcWwj2vBo3F3hOCXfbqHaFiqc4qh6eLhkMl2YZJS0g==}
@@ -32,7 +97,51 @@ packages:
     resolution: {integrity: sha512-LA4ZjwlnUblHVgq0oBF3Jl/6h/Nvs5fzBLwdEF4nuxnFdsfajde4WfxtJr3CaiH+F6ewcIB/q4jQ4UzPyid+CQ==}
     hasBin: true
 
+  tree-sitter-cli@0.24.6:
+    resolution: {integrity: sha512-FJ9B1XwXt8Auq75NK/6bpeci7avXSk73OMDq4elXHPS4ue11ZFeCrH/anVN/u5BAZjWqFO9nWGLNEdpdZOg+eA==}
+    engines: {node: '>=12.0.0'}
+    hasBin: true
+
 snapshots:
+
+  '@ast-grep/napi-darwin-arm64@0.33.0':
+    optional: true
+
+  '@ast-grep/napi-darwin-x64@0.33.0':
+    optional: true
+
+  '@ast-grep/napi-linux-arm64-gnu@0.33.0':
+    optional: true
+
+  '@ast-grep/napi-linux-arm64-musl@0.33.0':
+    optional: true
+
+  '@ast-grep/napi-linux-x64-gnu@0.33.0':
+    optional: true
+
+  '@ast-grep/napi-linux-x64-musl@0.33.0':
+    optional: true
+
+  '@ast-grep/napi-win32-arm64-msvc@0.33.0':
+    optional: true
+
+  '@ast-grep/napi-win32-ia32-msvc@0.33.0':
+    optional: true
+
+  '@ast-grep/napi-win32-x64-msvc@0.33.0':
+    optional: true
+
+  '@ast-grep/napi@0.33.0':
+    optionalDependencies:
+      '@ast-grep/napi-darwin-arm64': 0.33.0
+      '@ast-grep/napi-darwin-x64': 0.33.0
+      '@ast-grep/napi-linux-arm64-gnu': 0.33.0
+      '@ast-grep/napi-linux-arm64-musl': 0.33.0
+      '@ast-grep/napi-linux-x64-gnu': 0.33.0
+      '@ast-grep/napi-linux-x64-musl': 0.33.0
+      '@ast-grep/napi-win32-arm64-msvc': 0.33.0
+      '@ast-grep/napi-win32-ia32-msvc': 0.33.0
+      '@ast-grep/napi-win32-x64-msvc': 0.33.0
 
   '@tree-sitter-grammars/tree-sitter-toml@0.7.0':
     dependencies:
@@ -42,3 +151,5 @@ snapshots:
   node-addon-api@8.3.0: {}
 
   node-gyp-build@4.8.4: {}
+
+  tree-sitter-cli@0.24.6: {}
