@@ -1,9 +1,13 @@
 # Recreated from
 # https://github.com/tree-sitter/workflows/blob/0ddf14c2d6cb042a24f9b9bd9c2912f811aac862/.github/workflows/package-npm.yml
 
-name: Publish package (npm)
+name: Build package (npm)
 
 on:
+  # push:
+  #   branches:
+  #     - main
+  workflow_dispatch: null
   workflow_call:
     inputs:
       package-name:
@@ -44,69 +48,49 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-      - name: Set up NodeJS
-        uses: actions/setup-node@v4
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
         with:
-          cache: npm
-          node-version: ${{inputs.node-version}}
+          version: 9
       - name: Install dependencies
-        run: npm i --omit peer --omit optional
-      - name: Regenerate parser
-        if: ${{inputs.generate}}
-        shell: bash
-        run: |
-          while read -r grammar; do
-            grammar_dir=$(dirname "$grammar")
-            cd "$grammar_dir"
-            npm x -- tree-sitter generate
-            cd - > /dev/null
-          done < <(find . -name grammar.js -not -path './node_modules/*' -not -path './.build/*')
+        run: pnpm install
       - name: Build x64 binary
-        run: npm x -- prebuildify --arch x64 -t 20.9.0
-      - name: Set up cross-compilation
-        if: runner.os == 'Linux'
-        run: |-
-          sudo apt-get update
-          sudo apt-get install g++-aarch64-linux-gnu
-          printf '%s\n' >> "$GITHUB_ENV" \
-            'CC=aarch64-linux-gnu-gcc' 'CXX=aarch64-linux-gnu-g++'
-      - name: Build arm64 binary
-        run: npm x -- prebuildify --arch arm64 -t 20.9.0
+        run: pnpm -r build
       - name: Upload binaries
         uses: actions/upload-artifact@v4
         with:
-          path: prebuilds/**
-          name: prebuilds-${{runner.os}}
+          path: packages/**/parser.so
+          name: parsers-${{runner.os}}
           retention-days: 2
 
-  package:
-    name: Publish NodeJS package
-    needs: [build_wasm, build_node]
-    runs-on: ubuntu-${{inputs.ubuntu-version}}
-    environment:
-      name: ${{inputs.environment-name}}
-      url: https://www.npmjs.com/package/${{inputs.package-name}}
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-      - name: Set up NodeJS
-        uses: actions/setup-node@v4
-        with:
-          cache: npm
-          node-version: ${{inputs.node-version}}
-          registry-url: https://registry.npmjs.org/
-      - name: Download binaries
-        uses: actions/download-artifact@v4
-        with:
-          path: prebuilds
-          pattern: prebuilds-*
-          merge-multiple: true
-      - name: Check binaries
-        run: tree prebuilds
-      - name: Move Wasm binaries to root
-        continue-on-error: true
-        run: mv -v prebuilds/*.wasm .
-      - name: Publish to npm
-        run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.NODE_AUTH_TOKEN}}
+  # package:
+  #   name: Publish NodeJS package
+  #   needs: [build_wasm, build_node]
+  #   runs-on: ubuntu-${{inputs.ubuntu-version}}
+  #   environment:
+  #     name: ${{inputs.environment-name}}
+  #     url: https://www.npmjs.com/package/${{inputs.package-name}}
+  #   steps:
+  #     - name: Checkout repository
+  #       uses: actions/checkout@v4
+  #     - name: Set up NodeJS
+  #       uses: actions/setup-node@v4
+  #       with:
+  #         cache: npm
+  #         node-version: ${{inputs.node-version}}
+  #         registry-url: https://registry.npmjs.org/
+  #     - name: Download binaries
+  #       uses: actions/download-artifact@v4
+  #       with:
+  #         path: prebuilds
+  #         pattern: prebuilds-*
+  #         merge-multiple: true
+  #     - name: Check binaries
+  #       run: tree prebuilds
+  #     - name: Move Wasm binaries to root
+  #       continue-on-error: true
+  #       run: mv -v prebuilds/*.wasm .
+  #     - name: Publish to npm
+  #       run: npm publish
+  #       env:
+  #         NODE_AUTH_TOKEN: ${{secrets.NODE_AUTH_TOKEN}}
