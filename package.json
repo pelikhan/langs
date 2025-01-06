@@ -4,13 +4,12 @@
   "workspaces": [
     "packages/*"
   ],
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "version": "0.0.1",
+  "description": "Monorepo for `@ast-grep/lang-*` packages",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "author": "Herrington Darkholme",
+  "license": "MIT"
 }
