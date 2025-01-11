@@ -43,9 +43,7 @@ jobs:
       - name: Install dependencies
         run: pnpm install
       - name: Build x64 binary
-        run: |
-          pnpm -r copy-src
-          pnpm -r build
+        run: pnpm -r build
       - name: Test binary
         run: pnpm -r test
       - name: Upload binaries
