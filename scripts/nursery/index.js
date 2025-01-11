@@ -16,16 +16,16 @@ function test(name, lang, code) {
   console.log(node.kind())
 }
 
-// jsdoc for setupConfig
-// @param {Object} setupConfig
-// @param {string} setupConfig.packageName
-// @param {string} setupConfig.name
-// @param {Object} setupConfig.testConfig
-// @param {Object} setupConfig.testConfig.languageRegistration
-// @param {string} setupConfig.testConfig.code
-//
-//
-exports.setup = function setup(setupConfig){
+/** Setup ast-grep/lang package's pre-release and
+ * @param {Object} setupConfig
+ * @param {string} setupConfig.packageName
+ * @param {string} setupConfig.name
+ * @param {Object} setupConfig.testConfig
+ * @param {Object} setupConfig.testConfig.languageRegistration
+ * @param {string} setupConfig.testConfig.code
+ * @returns {void}
+ */
+function setup(setupConfig){
   const arg = process.argv[2]
   if (arg === 'copy') {
     copySrc(setupConfig.packageName)
@@ -34,3 +34,5 @@ exports.setup = function setup(setupConfig){
     test(setupConfig.name, testConfig.languageRegistration, testConfig.code)
   }
 }
+
+exports.setup = setup

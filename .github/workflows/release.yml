@@ -7,32 +7,25 @@ on:
   # push:
   #   branches:
   #     - main
-  workflow_dispatch: null
+  workflow_dispatch:
+    inputs:
+      package-name:
+        description: The name of the package
+        default: ${{github.event.repository.name}}
+        type: string
   workflow_call:
     inputs:
       package-name:
         description: The name of the package
         default: ${{github.event.repository.name}}
         type: string
-      environment-name:
-        description: The name of the environment
-        default: npm
-        type: string
-      node-version:
-        description: The NodeJS version
-        default: ${{vars.NODE_VERSION || '20'}}
-        type: string
-      generate:
-        description: Generate the parser artifacts
-        default: false
-        type: boolean
     secrets:
       NODE_AUTH_TOKEN:
         description: An authentication token for npm
         required: true
 
 jobs:
-  build_node:
+  prebuild:
     name: Build NodeJS binaries on ${{matrix.os}}
     runs-on: ${{matrix.os}}
     strategy:
@@ -51,19 +44,21 @@ jobs:
       - name: Install dependencies
         run: pnpm install
       - name: Build x64 binary
-        run: pnpm -r build
+        run: |
+          pnpm -r copy-src
+          pnpm -r build
       - name: Test binary
         run: pnpm -r test
       - name: Upload binaries
         uses: actions/upload-artifact@v4
         with:
-          path: packages/**/parser.so
-          name: parsers-${{runner.os}}
+          path: packages/${{inputs.package-name}}/**/parser.so
+          name: prebuilds-${{runner.os}}
           retention-days: 2
 
   # package:
   #   name: Publish NodeJS package
-  #   needs: [build_wasm, build_node]
+  #   needs: [prebuild]
   #   runs-on: ubuntu-latest
   #   environment:
   #     name: ${{inputs.environment-name}}
@@ -75,7 +70,6 @@ jobs:
   #       uses: actions/setup-node@v4
   #       with:
   #         cache: npm
-  #         node-version: ${{inputs.node-version}}
   #         registry-url: https://registry.npmjs.org/
   #     - name: Download binaries
   #       uses: actions/download-artifact@v4
