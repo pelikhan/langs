@@ -1,0 +1,13 @@
+{
+  "name": "@ast-grep/nursery",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "tree-sitter-cli": "0.24.6",
+    "@ast-grep/napi": "0.33.0"
+  }
+}

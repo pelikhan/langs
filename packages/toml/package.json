@@ -4,17 +4,19 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "node build.js && tree-sitter build -o parser.so",
-    "test": "node test.js"
+    "copy-src": "node nursery.js copy",
+    "build": "tree-sitter build -o parser.so",
+    "postinstall": "npm run build",
+    "test": "node nursery.js test"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "tree-sitter-cli": "0.24.6",
-    "@tree-sitter-grammars/tree-sitter-toml": "0.7.0"
+  "peerDependencies": {
+    "tree-sitter-cli": "0.24.6"
   },
   "devDependencies": {
-    "@ast-grep/napi": "0.33.0"
+    "@tree-sitter-grammars/tree-sitter-toml": "0.7.0",
+    "@ast-grep/nursery": "workspace:*"
   }
 }
