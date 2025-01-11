@@ -55,7 +55,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           path: packages/${{inputs.package-name}}/**/parser.so
-          name: prebuilds-${{runner.os}}
+          name: prebuilds-${{runner.os}}-${{runner.arch}}
           retention-days: 2
 
   package:
@@ -79,7 +79,7 @@ jobs:
         with:
           path: prebuilds
           pattern: prebuilds-*
-          merge-multiple: true
+          # merge-multiple: true
       - name: Check binaries
         run: tree prebuilds
       # - name: Publish to npm
