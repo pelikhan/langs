@@ -53,33 +53,27 @@ jobs:
           name: prebuilds-${{runner.os}}
           retention-days: 2
 
-  # package:
-  #   name: Publish NodeJS package
-  #   needs: [prebuild]
-  #   runs-on: ubuntu-latest
-  #   environment:
-  #     name: ${{inputs.environment-name}}
-  #     url: https://www.npmjs.com/package/${{inputs.package-name}}
-  #   steps:
-  #     - name: Checkout repository
-  #       uses: actions/checkout@v4
-  #     - name: Set up NodeJS
-  #       uses: actions/setup-node@v4
-  #       with:
-  #         cache: npm
-  #         registry-url: https://registry.npmjs.org/
-  #     - name: Download binaries
-  #       uses: actions/download-artifact@v4
-  #       with:
-  #         path: prebuilds
-  #         pattern: prebuilds-*
-  #         merge-multiple: true
-  #     - name: Check binaries
-  #       run: tree prebuilds
-  #     - name: Move Wasm binaries to root
-  #       continue-on-error: true
-  #       run: mv -v prebuilds/*.wasm .
-  #     - name: Publish to npm
-  #       run: npm publish
-  #       env:
-  #         NODE_AUTH_TOKEN: ${{secrets.NODE_AUTH_TOKEN}}
+  package:
+    name: Publish NodeJS package
+    needs: [prebuild]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Set up NodeJS
+        uses: actions/setup-node@v4
+        with:
+          cache: npm
+          registry-url: https://registry.npmjs.org/
+      - name: Download binaries
+        uses: actions/download-artifact@v4
+        with:
+          path: prebuilds
+          pattern: prebuilds-*
+          merge-multiple: true
+      - name: Check binaries
+        run: tree prebuilds
+      # - name: Publish to npm
+      #   run: npm publish
+      #   env:
+      #     NODE_AUTH_TOKEN: ${{secrets.NODE_AUTH_TOKEN}}
