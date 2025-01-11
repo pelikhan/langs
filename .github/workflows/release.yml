@@ -40,6 +40,11 @@ jobs:
         uses: pnpm/action-setup@v4
         with:
           version: 9
+      - name: Set up NodeJS
+        uses: actions/setup-node@v4
+        with:
+          cache: pnpm
+          registry-url: https://registry.npmjs.org/
       - name: Install dependencies
         run: pnpm install
       - name: Build x64 binary
@@ -63,7 +68,7 @@ jobs:
       - name: Set up NodeJS
         uses: actions/setup-node@v4
         with:
-          cache: npm
+          cache: pnpm
           registry-url: https://registry.npmjs.org/
       - name: Download binaries
         uses: actions/download-artifact@v4
