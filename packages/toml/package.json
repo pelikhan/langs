@@ -9,11 +9,21 @@
     "postinstall": "npm run build",
     "test": "node nursery.js test"
   },
+  "files": [
+    "index.js",
+    "src",
+    "prebuilds"
+  ],
   "keywords": [],
   "author": "",
   "license": "ISC",
   "peerDependencies": {
     "tree-sitter-cli": "0.24.6"
+  },
+  "peerDependenciesMeta": {
+    "tree-sitter-cli": {
+      "optional": true
+    }
   },
   "devDependencies": {
     "@tree-sitter-grammars/tree-sitter-toml": "0.7.0",
