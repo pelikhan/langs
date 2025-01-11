@@ -84,6 +84,6 @@ jobs:
         run: tree packages/${{inputs.package-name}}
       - name: Publish to npm
         # TODO: add dry-run as a workflow input
-        run: npm publish --dry-run
+        run: npm -r publish --dry-run
         env:
           NODE_AUTH_TOKEN: ${{secrets.NODE_AUTH_TOKEN}}
