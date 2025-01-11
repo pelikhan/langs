@@ -77,11 +77,11 @@ jobs:
       - name: Download binaries
         uses: actions/download-artifact@v4
         with:
-          path: prebuilds
+          path: packages/${{inputs.packages-name}}
           pattern: prebuilds-*
           # merge-multiple: true
       - name: Check binaries
-        run: tree prebuilds
+        run: tree packages/${{inputs.packages-name}}
       # - name: Publish to npm
       #   run: npm publish
       #   env:
