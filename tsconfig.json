@@ -6,6 +6,7 @@
     "moduleResolution": "nodenext",
     "strict": true,
     "esModuleInterop": true,
+    "declaration": true,
     "forceConsistentCasingInFileNames": true
   },
   "exclude": [

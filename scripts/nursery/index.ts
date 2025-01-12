@@ -7,13 +7,15 @@ async function copySrc(packageName: string) {
   await cp(src, 'src', { recursive: true })
 }
 
-/** Setup ast-grep/lang package's pre-release
- *
- **/
+/** Setup ast-grep/lang package's pre-release */
 interface SetupConfig {
+  /** Name of the language. e.g. toml */
   name: string
+  /** Language registration object, usually the export of index.js */
   languageRegistration: DynamicLangRegistrations[string]
+  /** Package name of tree-sitter package. e.g. tree-sitter-toml */
   packageName: string
+  /** Test cases running in CI */
   testRunner: (parse: (c: string) => SgRoot) => void
 }
 
