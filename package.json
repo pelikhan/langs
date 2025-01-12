@@ -8,8 +8,7 @@
   "version": "0.0.1",
   "description": "Monorepo for `@ast-grep/lang-*` packages",
   "scripts": {
-    "postinstall": "pnpm -r compile && pnpm -r copy-src",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "postinstall": "pnpm -r compile"
   },
   "keywords": [],
   "author": "Herrington Darkholme",

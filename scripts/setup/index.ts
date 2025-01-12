@@ -9,10 +9,18 @@ function log(...args: unknown[]) {
   console.debug(`@ast-grep/lang:`, ...args)
 }
 
+interface SetupConfig {
+  /** Directory of the lang package. e.g. __dirname */
+  directory: string
+  /** Package name of tree-sitter package. e.g. tree-sitter-css */
+  treeSitterPackage: string
+}
+
 /**
  * Move prebuild or build parser
  */
-async function postinstall(dir: string) {
+function postinstall(config: SetupConfig) {
+  const dir = config.directory
   const parser = path.join(dir, 'parser.so')
   if (fs.existsSync(parser)) {
     log('parser already exists, skipping build')
@@ -24,13 +32,30 @@ async function postinstall(dir: string) {
     fs.copyFileSync(prebuild, parser)
     return
   }
+  buildDynamicLib(config)
+}
+
+function buildDynamicLib(config: SetupConfig) {
   log('building parser')
   try {
+    copySrcIfNeeded(config)
     execSync('npm run build')
   } catch (e: unknown) {
     log('build failed, please ensure tree-sitter-cli is installed as peer dependency')
     log(e)
   }
+}
+
+function copySrcIfNeeded(config: SetupConfig) {
+  const { directory, treeSitterPackage } = config
+  const existing = path.join(directory, 'src')
+  const src = path.join(directory, 'node_modules', treeSitterPackage,  'src')
+  if (fs.existsSync(existing)) {
+    log('src exists, skipping copy')
+    return
+  }
+  log('copying tree-sitter src')
+  fs.cpSync(src, 'src', { recursive: true })
 }
 
 const PLATFORM_MAP: Record<string, string> = {
