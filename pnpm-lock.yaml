@@ -10,6 +10,9 @@ importers:
 
   packages/toml:
     dependencies:
+      '@ast-grep/setup-lang':
+        specifier: workspace:*
+        version: link:../../scripts/setup
       tree-sitter-cli:
         specifier: 0.24.6
         version: 0.24.6
@@ -29,6 +32,8 @@ importers:
       tree-sitter-cli:
         specifier: 0.24.6
         version: 0.24.6
+
+  scripts/setup: {}
 
 packages:
 

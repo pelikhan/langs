@@ -18,6 +18,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "dependencies": {
+    "@ast-grep/setup-lang": "workspace:*"
+  },
   "peerDependencies": {
     "tree-sitter-cli": "0.24.6"
   },
