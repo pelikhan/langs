@@ -33,5 +33,9 @@
   "devDependencies": {
     "@tree-sitter-grammars/tree-sitter-toml": "0.7.0",
     "@ast-grep/nursery": "workspace:*"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   }
 }

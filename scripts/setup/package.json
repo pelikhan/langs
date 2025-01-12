@@ -1,9 +1,14 @@
 {
   "name": "@ast-grep/setup-lang",
   "version": "0.0.1",
+  "private": false,
   "description": "",
   "main": "index.js",
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  }
 }
