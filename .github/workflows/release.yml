@@ -11,6 +11,10 @@ on:
         description: The working directory of the package, useful for monorepos
         default: .
         type: string
+      dry-run:
+        description: Dry run (no publish)
+        type: boolean
+        default: false
     secrets:
       NODE_AUTH_TOKEN:
         description: An authentication token for npm
@@ -85,9 +89,13 @@ jobs:
       - name: Check binaries
         run: tree
         working-directory: ${{inputs.directory}}
-      - name: Publish to npm
-        # TODO: add dry-run as a workflow input
+      - name: Publish Dry Run
         run: pnpm publish --dry-run
+        if: ${{ inputs.dry-run }}
+        working-directory: ${{inputs.directory}}
+      - name: Publish to npm
+        run: pnpm publish
+        if: ${{ !inputs.dry-run }}
         env:
           NODE_AUTH_TOKEN: ${{secrets.NODE_AUTH_TOKEN}}
         working-directory: ${{inputs.directory}}
