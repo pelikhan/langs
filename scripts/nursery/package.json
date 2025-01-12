@@ -8,7 +8,8 @@
   "author": "",
   "license": "ISC",
   "scripts": {
-    "compile": "tsc"
+    "compile": "tsc",
+    "prepublishOnly": "tsc"
   },
   "dependencies": {
     "@ast-grep/napi": "0.33.0",

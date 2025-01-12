@@ -1,20 +1,18 @@
-const { execSync } = require('child_process')
-const fs = require('fs')
-const path = require('path')
+import { execSync } from 'child_process'
+import fs from 'fs'
+import path from 'path'
 
 /**
  * Log to console
- * @param  {...string} args
  */
-function log(...args) {
+function log(...args: unknown[]) {
   console.debug(`@ast-grep/lang:`, ...args)
 }
 
 /**
  * Move prebuild or build parser
- * @param {string} dir
  */
-async function postinstall(dir) {
+async function postinstall(dir: string) {
   const parser = path.join(dir, 'parser.so')
   if (fs.existsSync(parser)) {
     log('parser already exists, skipping build')
@@ -29,28 +27,27 @@ async function postinstall(dir) {
   log('building parser')
   try {
     execSync('npm run build')
-  } catch (e) {
+  } catch (e: unknown) {
     log('build failed, please ensure tree-sitter-cli is installed as peer dependency')
     log(e)
   }
 }
 
-const PLATFORM_MAP = {
+const PLATFORM_MAP: Record<string, string> = {
   darwin: 'macOS',
   linux: 'Linux',
   win32: 'Windows',
 }
 
-const ARCH_MAP = {
+const ARCH_MAP: Record<string, string> = {
   x64: 'x64',
   arm64: 'ARM64',
 }
 
 /**
  * Resolve prebuild path
- * @param {string} dir
  */
-function resolvePrebuild(dir) {
+function resolvePrebuild(dir: string) {
   const os = PLATFORM_MAP[process.platform]
   const arch = ARCH_MAP[process.arch]
   const prebuild = path.join(dir, 'prebuilds', `prebuild-${os}-${arch}`, 'parser.so')
@@ -62,4 +59,4 @@ function resolvePrebuild(dir) {
   return prebuild
 }
 
-exports.postinstall = postinstall
+export { postinstall }
