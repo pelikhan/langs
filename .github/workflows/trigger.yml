@@ -1,0 +1,23 @@
+name: Publish package
+
+on:
+  # push:
+  #   branches:
+  #     - main
+  workflow_dispatch:
+    inputs:
+      package-name:
+        description: The name of the package
+        type: string
+      dry-run:
+        description: Whether to run the workflow without publishing
+        type: boolean
+        default: false
+
+jobs:
+  npm-publish:
+    uses: ast-grep/lang/.github/workflows/release@main
+    with:
+      package-name: ${{inputs.package-name}}
+    secrets:
+      NODE_AUTH_TOKEN: ${{secrets.NODE_AUTH_TOKEN}}

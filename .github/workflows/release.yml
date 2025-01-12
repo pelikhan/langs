@@ -1,17 +1,10 @@
 # Recreated from
 # https://github.com/tree-sitter/workflows/blob/0ddf14c2d6cb042a24f9b9bd9c2912f811aac862/.github/workflows/package-npm.yml
 
+# This is a reusable and reference workflow for parsers
 name: Build package
 
 on:
-  # push:
-  #   branches:
-  #     - main
-  workflow_dispatch:
-    inputs:
-      package-name:
-        description: The name of the package
-        type: string
   workflow_call:
     inputs:
       package-name:
