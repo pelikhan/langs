@@ -20,7 +20,7 @@ async function postinstall(dir) {
     log('parser already exists, skipping build')
     return
   }
-  const prebuild = resolvePrebuild()
+  const prebuild = resolvePrebuild(dir)
   if (prebuild) {
     log('copying prebuild parser')
     fs.copyFileSync(prebuild, parser)
