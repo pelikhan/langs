@@ -6,7 +6,7 @@ import path from 'node:path'
  * Log to console
  */
 function log(...args: unknown[]) {
-  console.debug(`@ast-grep/lang:`, ...args)
+  console.debug('@ast-grep/lang:', ...args)
 }
 
 interface SetupConfig {

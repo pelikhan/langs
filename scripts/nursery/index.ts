@@ -1,12 +1,12 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import { parse, registerDynamicLanguage, SgRoot, DynamicLangRegistrations } from '@ast-grep/napi'
+import { parse, registerDynamicLanguage, type SgRoot, type DynamicLangRegistrations } from '@ast-grep/napi'
 
 /**
  * Log to console
  */
 function log(...args: unknown[]) {
-  console.debug(`@ast-grep/lang:`, ...args)
+  console.debug('@ast-grep/lang:', ...args)
 }
 
 /** Setup ast-grep/lang package's pre-release */
@@ -117,7 +117,7 @@ function generateLangNodeTypes(setupConfig: SetupConfig) {
       `type ${lang}Types = ${JSON.stringify(nodeTypeMap, null, 2)};` +
       '\n' +
       `export default ${lang}Types;`
-    fs.writeFileSync(path.join(dirname, `type.d.ts`), fileContent)
+    fs.writeFileSync(path.join(dirname, 'type.d.ts'), fileContent)
   } catch (e) {
     console.error(`Error while generating node types for ${lang}`)
     throw e
