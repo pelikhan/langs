@@ -129,5 +129,9 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
+# ignore generated parser files
 packages/**/parser.so
+# do not include copied directories
 packages/**/src
+# ignore generated ts files in scripts
+scripts/**/*.{js, d.ts}

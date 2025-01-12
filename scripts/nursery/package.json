@@ -7,12 +7,19 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "scripts": {
+    "prepare": "tsc"
+  },
   "dependencies": {
-    "tree-sitter-cli": "0.24.6",
-    "@ast-grep/napi": "0.33.0"
+    "@ast-grep/napi": "0.33.0",
+    "tree-sitter-cli": "0.24.6"
   },
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.3",
+    "@types/node": "22.10.5"
   }
 }
