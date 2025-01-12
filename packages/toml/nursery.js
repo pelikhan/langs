@@ -5,6 +5,7 @@ const assert = require('node:assert')
 setup({
   dirname: __dirname,
   name: 'toml',
+  treeSitterPackage: '@tree-sitter-grammars/tree-sitter-toml',
   languageRegistration: toml,
   testRunner: (parse) => {
     const sg = parse('name = "Tom"')

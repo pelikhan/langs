@@ -11,7 +11,7 @@ function log(...args: unknown[]) {
 
 interface SetupConfig {
   /** Directory of the lang package. e.g. __dirname */
-  directory: string
+  dirname: string
   /** Package name of tree-sitter package. e.g. tree-sitter-css */
   treeSitterPackage: string
 }
@@ -20,7 +20,7 @@ interface SetupConfig {
  * Move prebuild or build parser
  */
 function postinstall(config: SetupConfig) {
-  const dir = config.directory
+  const dir = config.dirname
   const parser = path.join(dir, 'parser.so')
   if (fs.existsSync(parser)) {
     log('parser already exists, skipping build')
@@ -41,8 +41,8 @@ function postinstall(config: SetupConfig) {
 }
 
 function buildSrc(config: SetupConfig) {
-  const { directory, treeSitterPackage } = config
-  const existing = path.join(directory, 'src')
+  const { dirname } = config
+  const existing = path.join(dirname, 'src')
   if (!fs.existsSync(existing)) {
     log('tree-sitter src not found. If you are making a lang package, please run `pnpm source`.')
     return
