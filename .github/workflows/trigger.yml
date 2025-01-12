@@ -16,7 +16,7 @@ on:
 
 jobs:
   npm-publish:
-    uses: ast-grep/lang/.github/workflows/release@main
+    uses: ast-grep/langs/.github/workflows/release.yml@main
     with:
       package-name: ${{inputs.package-name}}
     secrets:
