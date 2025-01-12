@@ -8,21 +8,17 @@ async function copySrc(packageName) {
   await cp(src, 'src', { recursive: true })
 }
 
-function test(name, lang, code) {
-  registerDynamicLanguage({ [name]: lang })
-  const tree = parse(name, code)
-  const root = tree.root()
-  const node = root.find('$NAME = "toml"')
-  console.log(node.kind())
+function test(setupConfig) {
+  const { name, languageRegistration, testRunner } = setupConfig
+  registerDynamicLanguage({ [name]: languageRegistration })
+  testRunner((code) => parse(name, code))
 }
 
 /** Setup ast-grep/lang package's pre-release and
  * @param {Object} setupConfig
- * @param {string} setupConfig.packageName
  * @param {string} setupConfig.name
- * @param {Object} setupConfig.testConfig
- * @param {Object} setupConfig.testConfig.languageRegistration
- * @param {string} setupConfig.testConfig.code
+ * @param {string} setupConfig.packageName
+ * @param {Function} setupConfig.testRunner
  * @returns {void}
  */
 function setup(setupConfig){
@@ -30,8 +26,7 @@ function setup(setupConfig){
   if (arg === 'copy') {
     copySrc(setupConfig.packageName)
   } else if (arg === 'test') {
-    const testConfig = setupConfig.testConfig
-    test(setupConfig.name, testConfig.languageRegistration, testConfig.code)
+    test(setupConfig)
   }
 }
 
