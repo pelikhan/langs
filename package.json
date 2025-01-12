@@ -9,12 +9,14 @@
   "description": "Monorepo for `@ast-grep/lang-*` packages",
   "scripts": {
     "postinstall": "pnpm -r compile-ts",
-    "lint": "biome lint --fix"
+    "lint": "biome lint --fix",
+    "prepare": "husky"
   },
   "keywords": [],
   "author": "Herrington Darkholme",
   "license": "MIT",
   "devDependencies": {
-    "@biomejs/biome": "1.9.4"
+    "@biomejs/biome": "1.9.4",
+    "husky": "9.1.7"
   }
 }
