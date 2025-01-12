@@ -6,7 +6,7 @@
   "scripts": {
     "copy-src": "node nursery.js copy",
     "build": "tree-sitter build -o parser.so",
-    "prepare": "node postinstall.js",
+    "postinstall": "node postinstall.js",
     "test": "node nursery.js test"
   },
   "files": [

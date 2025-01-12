@@ -8,7 +8,7 @@
   "version": "0.0.1",
   "description": "Monorepo for `@ast-grep/lang-*` packages",
   "scripts": {
-    "preprepare": "pnpm -r copy-src",
+    "postinstall": "pnpm -r compile && pnpm -r copy-src",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
