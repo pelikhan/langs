@@ -1,7 +1,13 @@
-
-import { readFileSync, writeFileSync } from 'node:fs'
+import fs from 'node:fs'
 import path from 'node:path'
 import { parse, registerDynamicLanguage, SgRoot, DynamicLangRegistrations } from '@ast-grep/napi'
+
+/**
+ * Log to console
+ */
+function log(...args: unknown[]) {
+  console.debug(`@ast-grep/lang:`, ...args)
+}
 
 /** Setup ast-grep/lang package's pre-release */
 interface SetupConfig {
@@ -29,8 +35,21 @@ export function setup(setupConfig: SetupConfig) {
   if (arg === 'test') {
     test(setupConfig)
   } else if (arg === 'source') {
+    copySrcIfNeeded(setupConfig)
     generateLangNodeTypes(setupConfig)
   }
+}
+
+function copySrcIfNeeded(config: SetupConfig) {
+  const { dirname, treeSitterPackage } = config
+  const existing = path.join(dirname, 'src')
+  const src = path.join(dirname, 'node_modules', treeSitterPackage,  'src')
+  if (fs.existsSync(existing)) {
+    log('src exists, skipping copy')
+    return
+  }
+  log('copying tree-sitter src')
+  fs.cpSync(src, 'src', { recursive: true })
 }
 
 interface NodeBasicInfo {
@@ -83,7 +102,7 @@ function processNodeTypes(nodeTypes: NodeType[]): Record<string, NodeType> {
 
 function readLangNodeTypes(dirname: string): NodeType[] {
   const staticNodePath = path.join(dirname, 'src', 'node-types.json')
-  const content = readFileSync(staticNodePath, 'utf-8')
+  const content = fs.readFileSync(staticNodePath, 'utf-8')
   return JSON.parse(content)
 }
 
@@ -98,7 +117,7 @@ function generateLangNodeTypes(setupConfig: SetupConfig) {
       `type ${lang}Types = ${JSON.stringify(nodeTypeMap, null, 2)};` +
       '\n' +
       `export default ${lang}Types;`
-    writeFileSync(path.join(dirname, `type.d.ts`), fileContent)
+    fs.writeFileSync(path.join(dirname, `type.d.ts`), fileContent)
   } catch (e) {
     console.error(`Error while generating node types for ${lang}`)
     throw e

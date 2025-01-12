@@ -8,7 +8,7 @@
   "author": "",
   "license": "ISC",
   "scripts": {
-    "compile": "tsc",
+    "compile-ts": "tsc",
     "prepublishOnly": "tsc"
   },
   "dependencies": {

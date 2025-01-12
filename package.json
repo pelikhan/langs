@@ -8,7 +8,7 @@
   "version": "0.0.1",
   "description": "Monorepo for `@ast-grep/lang-*` packages",
   "scripts": {
-    "postinstall": "pnpm -r compile"
+    "postinstall": "pnpm -r compile-ts"
   },
   "keywords": [],
   "author": "Herrington Darkholme",

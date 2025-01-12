@@ -1,6 +1,6 @@
-import { execSync } from 'child_process'
-import fs from 'fs'
-import path from 'path'
+import { execSync } from 'node:child_process'
+import fs from 'node:fs'
+import path from 'node:path'
 
 /**
  * Log to console
@@ -32,30 +32,23 @@ function postinstall(config: SetupConfig) {
     fs.copyFileSync(prebuild, parser)
     return
   }
-  buildDynamicLib(config)
-}
-
-function buildDynamicLib(config: SetupConfig) {
-  log('building parser')
   try {
-    copySrcIfNeeded(config)
-    execSync('npm run build')
+    buildSrc(config)
   } catch (e: unknown) {
     log('build failed, please ensure tree-sitter-cli is installed as peer dependency')
     log(e)
   }
 }
 
-function copySrcIfNeeded(config: SetupConfig) {
+function buildSrc(config: SetupConfig) {
   const { directory, treeSitterPackage } = config
   const existing = path.join(directory, 'src')
-  const src = path.join(directory, 'node_modules', treeSitterPackage,  'src')
-  if (fs.existsSync(existing)) {
-    log('src exists, skipping copy')
+  if (!fs.existsSync(existing)) {
+    log('tree-sitter src not found. If you are making a lang package, please run `pnpm source`.')
     return
   }
-  log('copying tree-sitter src')
-  fs.cpSync(src, 'src', { recursive: true })
+  log('building parser from source')
+  execSync('npm run build')
 }
 
 const PLATFORM_MAP: Record<string, string> = {
