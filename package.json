@@ -8,9 +8,13 @@
   "version": "0.0.1",
   "description": "Monorepo for `@ast-grep/lang-*` packages",
   "scripts": {
-    "postinstall": "pnpm -r compile-ts"
+    "postinstall": "pnpm -r compile-ts",
+    "lint": "biome lint --fix"
   },
   "keywords": [],
   "author": "Herrington Darkholme",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@biomejs/biome": "1.9.4"
+  }
 }
