@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "tree-sitter build -o parser.so",
+    "prepublishOnly": "node nursery.js source",
     "postinstall": "node postinstall.js",
     "test": "node nursery.js test"
   },

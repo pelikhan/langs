@@ -131,6 +131,7 @@ dist
 
 # ignore generated parser files
 packages/**/parser.so
+packages/**/type.d.ts
 # do not include copied directories
 packages/**/src
 # ignore generated ts files in scripts

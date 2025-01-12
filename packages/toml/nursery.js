@@ -3,6 +3,7 @@ const toml = require('./index')
 const assert = require('node:assert')
 
 setup({
+  dirname: __dirname,
   name: 'toml',
   languageRegistration: toml,
   testRunner: (parse) => {

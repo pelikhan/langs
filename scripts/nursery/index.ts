@@ -1,12 +1,18 @@
+
+import { readFileSync, writeFileSync } from 'node:fs'
+import path from 'node:path'
 import { parse, registerDynamicLanguage, SgRoot, DynamicLangRegistrations } from '@ast-grep/napi'
 
 /** Setup ast-grep/lang package's pre-release */
 interface SetupConfig {
+  /** the root directory of the package */
+  dirname: string
   /** Name of the language. e.g. toml */
   name: string
   /** Language registration object, usually the export of index.js */
   languageRegistration: DynamicLangRegistrations[string]
-  packageName: string
+  /** Package name of tree-sitter package. e.g. tree-sitter-css */
+  treeSitterPackage: string
   /** Test cases running in CI */
   testRunner: (parse: (c: string) => SgRoot) => void
 }
@@ -22,5 +28,79 @@ export function setup(setupConfig: SetupConfig) {
   const arg = process.argv[2]
   if (arg === 'test') {
     test(setupConfig)
+  } else if (arg === 'source') {
+    generateLangNodeTypes(setupConfig)
+  }
+}
+
+interface NodeBasicInfo {
+  type: string
+  named: boolean
+}
+
+interface NodeFieldInfo {
+  multiple: boolean
+  required: boolean
+  types: NodeBasicInfo[]
+}
+
+interface NodeType extends NodeBasicInfo {
+  root?: boolean
+  fields?: {
+    [fieldName: string]: NodeFieldInfo
+  }
+  children?: NodeFieldInfo
+  subtypes?: NodeBasicInfo[]
+}
+
+function filterOutUnNamedNode(node: NodeType): NodeType | null {
+  if (!node.named) {
+    return null
+  }
+  if (node.fields) {
+    for (const field of Object.keys(node.fields)) {
+      node.fields[field].types = node.fields[field].types.filter(n => n.named)
+    }
+  }
+  if (node.children) {
+    node.children.types = node.children.types.filter(n => n.named)
+  }
+  if (node.subtypes) {
+    node.subtypes = node.subtypes.filter(n => n.named)
+  }
+  return node
+}
+
+function processNodeTypes(nodeTypes: NodeType[]): Record<string, NodeType> {
+  const filteredNodeTypes = nodeTypes
+    .map(filterOutUnNamedNode)
+    .filter(node => !!node)
+  const nodeTypeMap = Object.fromEntries(
+    filteredNodeTypes.map(node => [node.type, node]),
+  )
+  return nodeTypeMap
+}
+
+function readLangNodeTypes(dirname: string): NodeType[] {
+  const staticNodePath = path.join(dirname, 'src', 'node-types.json')
+  const content = readFileSync(staticNodePath, 'utf-8')
+  return JSON.parse(content)
+}
+
+function generateLangNodeTypes(setupConfig: SetupConfig) {
+  const { name: lang, treeSitterPackage, dirname } = setupConfig
+  try {
+    const nodeTypes = readLangNodeTypes(dirname)
+    const nodeTypeMap = processNodeTypes(nodeTypes)
+    const fileContent =
+      `// Auto-generated from ${treeSitterPackage}` +
+      '\n' +
+      `type ${lang}Types = ${JSON.stringify(nodeTypeMap, null, 2)};` +
+      '\n' +
+      `export default ${lang}Types;`
+    writeFileSync(path.join(dirname, `type.d.ts`), fileContent)
+  } catch (e) {
+    console.error(`Error while generating node types for ${lang}`)
+    throw e
   }
 }
