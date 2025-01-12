@@ -6,11 +6,12 @@
   "scripts": {
     "copy-src": "node nursery.js copy",
     "build": "tree-sitter build -o parser.so",
-    "postinstall": "npm run build",
+    "postinstall": "node postinstall.js",
     "test": "node nursery.js test"
   },
   "files": [
     "index.js",
+    "postinstall.js",
     "src",
     "prebuilds"
   ],
