@@ -1,0 +1,25 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    name: CI - build & test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+      - name: Set up NodeJS
+        uses: actions/setup-node@v4
+        with:
+          cache: pnpm
+      - name: Install dependencies
+        run: pnpm install --ignore-scripts
+      - name: Run linting/formatting checks
+        run: pnpm lint:ci
