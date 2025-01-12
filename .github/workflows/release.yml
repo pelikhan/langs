@@ -7,9 +7,9 @@ name: Build package
 on:
   workflow_call:
     inputs:
-      package-name:
-        description: The name of the package
-        default: ${{github.event.repository.name}}
+      directory:
+        description: The working directory of the package, useful for monorepos
+        default: .
         type: string
     secrets:
       NODE_AUTH_TOKEN:
@@ -42,16 +42,19 @@ jobs:
         run: pnpm install
       - name: Build x64 binary
         run: |
-          pnpm -r source
-          pnpm -r build
+          pnpm source
+          pnpm build
+        working-directory: ${{inputs.directory}}
       - name: Test binary
-        run: pnpm -r test
+        run: pnpm test
+        working-directory: ${{inputs.directory}}
       - name: Upload binaries
         uses: actions/upload-artifact@v4
         with:
-          path: packages/${{inputs.package-name}}/**/parser.so
+          path: ./**/parser.so
           name: prebuild-${{runner.os}}-${{runner.arch}}
           retention-days: 2
+        working-directory: ${{inputs.directory}}
 
   package:
     name: Publish NodeJS package
@@ -74,15 +77,19 @@ jobs:
       - name: Download binaries
         uses: actions/download-artifact@v4
         with:
-          path: packages/${{inputs.package-name}}/prebuilds
+          path: prebuilds
           pattern: prebuild-*
           # merge-multiple: true
+        working-directory: ${{inputs.directory}}
       - name: Move sources
-        run: pnpm -r source
+        run: pnpm source
+        working-directory: ${{inputs.directory}}
       - name: Check binaries
-        run: tree packages/${{inputs.package-name}}
+        run: tree
+        working-directory: ${{inputs.directory}}
       - name: Publish to npm
         # TODO: add dry-run as a workflow input
-        run: pnpm -r publish --dry-run
+        run: pnpm publish --dry-run
         env:
           NODE_AUTH_TOKEN: ${{secrets.NODE_AUTH_TOKEN}}
+        working-directory: ${{inputs.directory}}
