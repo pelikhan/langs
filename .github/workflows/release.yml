@@ -1,7 +1,7 @@
 # Recreated from
 # https://github.com/tree-sitter/workflows/blob/0ddf14c2d6cb042a24f9b9bd9c2912f811aac862/.github/workflows/package-npm.yml
 
-name: Build package (npm)
+name: Build package
 
 on:
   # push:
