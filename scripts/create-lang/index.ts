@@ -54,20 +54,26 @@ function askConfiguration() {
       validate: (value) => {
         return value.length === 1 ? true : 'Expando char must be a single character'
       }
+    },
+    {
+      type: 'confirm',
+      name: 'includeDotFiles',
+      message: 'Include gitignore and npm publish files?',
+      initial: true,
     }
   ])
 }
 
 type Answers = Awaited<ReturnType<typeof askConfiguration>>
 
-function copyTemplate(targetDir: string, skipDotFiles = false) {
+function copyTemplate(targetDir: string, includeDotFiles: boolean) {
   const templateDir = path.join(__dirname, 'template')
   return fs.cp(templateDir, targetDir, {
     recursive: true,  // Copy all files and folders
-    // includes hidden files if `skipDotFiles` is false
+    // includes hidden files if `includeDotFiles` is true
     filter: (src) => {
       const basename = path.basename(src)
-      return !skipDotFiles || !basename.startsWith('.')
+      return includeDotFiles || !basename.startsWith('.')
     }
   })
 }
@@ -78,7 +84,7 @@ async function renameFiles(dir: string, answer: Answers) {
     $$NAME$$: answer.name,
     $$TREE_SITTER_PACKAGE$$: answer.treeSitterPackage,
     $$EXTENSIONS$$: JSON.stringify(answer.extensions),
-    $$EXPANDO_CHAR$$: JSON.stringify(answer.expandoChar),
+    $$EXPANDO_CHAR$$: answer.expandoChar,
   }
   for (const file of await fs.readdir(dir)) {
     const filePath = path.join(dir, file)
@@ -106,8 +112,7 @@ function installTreeSitterPackage(answer: Answers) {
 async function main() {
   const cwd = process.cwd()
   const config = await askConfiguration()
-  const skipDotFiles = process.argv.slice(2).includes('--skip-dot-files')
-  await copyTemplate(cwd, skipDotFiles)
+  await copyTemplate(cwd, config.includeDotFiles)
   await renameFiles(cwd, config)
   installTreeSitterPackage(config)
 }
