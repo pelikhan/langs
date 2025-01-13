@@ -21,21 +21,23 @@ function askConfiguration() {
   return prompts([
     {
       type: 'text',
-      name: 'packageName',
-      message: 'Package name',
-      validate: isValidPackageName,
-    },
-    {
-      type: 'text',
       name: 'name',
       message: 'Language name',
       validate: required,
     },
     {
       type: 'text',
+      name: 'packageName',
+      message: 'Package name',
+      validate: isValidPackageName,
+      initial: (_, answers) => `my-dynamic-lang-${answers.name}`,
+    },
+    {
+      type: 'text',
       name: 'treeSitterPackage',
       message: 'Tree-sitter package to use',
       validate: isValidPackageName,
+      initial: (_, answers) => `tree-sitter-${answers.name}`,
     },
     {
       type: 'list',
@@ -58,19 +60,23 @@ function askConfiguration() {
 
 type Answers = Awaited<ReturnType<typeof askConfiguration>>
 
-function copyTemplate(targetDir: string) {
+function copyTemplate(targetDir: string, skipDotFiles = false) {
   const templateDir = path.join(__dirname, 'template')
-  return fs.cp(templateDir, targetDir, { recursive: true })
-}
-
-function removeDotFiles() {
+  return fs.cp(templateDir, targetDir, {
+    recursive: true,  // Copy all files and folders
+    // includes hidden files if `skipDotFiles` is false
+    filter: (src) => {
+      const basename = path.basename(src)
+      return !skipDotFiles || !basename.startsWith('.')
+    }
+  })
 }
 
 async function renameFiles(dir: string, answer: Answers) {
   const name: Record<string, string> = {
     $$PACKAGE_NAME$$: answer.packageName,
     $$NAME$$: answer.name,
-    $$TREE_SITTER_PACKAGE$$: answer.name,
+    $$TREE_SITTER_PACKAGE$$: answer.treeSitterPackage,
     $$EXTENSIONS$$: JSON.stringify(answer.extensions),
     $$EXPANDO_CHAR$$: JSON.stringify(answer.expandoChar),
   }
@@ -89,17 +95,21 @@ async function renameFiles(dir: string, answer: Answers) {
   }
 }
 function installTreeSitterPackage(answer: Answers) {
-  execSync(`pnpm install ${answer.treeSitterPackage} --save-dev`)
+  console.log('Installing tree-sitter package...')
+  execSync(`pnpm install ${answer.treeSitterPackage} --save-dev --save-exact`)
+  console.log('Copying source code...')
+  execSync('pnpm run source')
+  console.log('Compiling')
+  execSync('pnpm run build')
 }
 
 async function main() {
   const cwd = process.cwd()
   const config = await askConfiguration()
-  await copyTemplate(cwd)
-  if (process.argv.slice(2).includes('--skip-dot-files')) {
-    removeDotFiles()
-  }
+  const skipDotFiles = process.argv.slice(2).includes('--skip-dot-files')
+  await copyTemplate(cwd, skipDotFiles)
   await renameFiles(cwd, config)
+  installTreeSitterPackage(config)
 }
 
 main()
