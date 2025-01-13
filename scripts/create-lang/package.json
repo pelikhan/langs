@@ -1,24 +1,29 @@
 {
   "name": "@ast-grep/create-lang",
-  "version": "0.0.1",
+  "version": "0.0.0-prerelease",
   "private": false,
   "description": "",
   "main": "index.js",
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "bin": {
+    "create-lang": "index.js"
+  },
   "scripts": {
     "compile-ts": "tsc",
     "prepublishOnly": "tsc"
   },
   "dependencies": {
+    "prompts": "2.4.2"
   },
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
   "devDependencies": {
-    "typescript": "^5.7.3",
-    "@types/node": "22.10.5"
+    "@types/node": "22.10.5",
+    "@types/prompts": "^2.4.9",
+    "typescript": "^5.7.3"
   }
 }
