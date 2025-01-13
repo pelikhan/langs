@@ -40,4 +40,23 @@ function askConfiguration() {
   ])
 }
 
-askConfiguration().then(console.log)
+async function copyTemplate() {
+}
+
+function removeDotFiles() {
+}
+function renameFiles() {
+  // Rename files
+}
+
+async function main() {
+  const config = await askConfiguration()
+  await copyTemplate()
+  if (process.argv.slice(2).includes('--skip-dot-files')) {
+    removeDotFiles()
+  }
+  renameFiles()
+}
+
+main()
+

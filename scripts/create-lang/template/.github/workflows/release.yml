@@ -1,0 +1,22 @@
+name: Publish package
+
+on:
+  workflow_dispatch:
+    inputs:
+      directory:
+        description: The working directory of the package, useful for monorepos
+        default: .
+        type: string
+      dry-run:
+        description: Dry run (no publish)
+        type: boolean
+        default: true
+
+jobs:
+  npm-publish:
+    uses: ast-grep/langs/.github/workflows/release.yml@main
+    with:
+      directory: ${{ inputs.directory }}
+      dry-run: ${{ inputs.dry-run }}
+    secrets:
+      NODE_AUTH_TOKEN: ${{secrets.NODE_AUTH_TOKEN}}
