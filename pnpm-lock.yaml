@@ -31,6 +31,15 @@ importers:
         specifier: 0.7.0
         version: 0.7.0
 
+  scripts/create-lang:
+    devDependencies:
+      '@types/node':
+        specifier: 22.10.5
+        version: 22.10.5
+      typescript:
+        specifier: ^5.7.3
+        version: 5.7.3
+
   scripts/nursery:
     dependencies:
       '@ast-grep/napi':
