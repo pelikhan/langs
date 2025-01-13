@@ -12,8 +12,6 @@ function log(...args: unknown[]) {
 interface SetupConfig {
   /** Directory of the lang package. e.g. __dirname */
   dirname: string
-  /** Package name of tree-sitter package. e.g. tree-sitter-css */
-  treeSitterPackage: string
 }
 
 /**

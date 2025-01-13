@@ -1,6 +1,6 @@
 {
-  "name": "@ast-grep/lang-toml",
-  "version": "0.0.2",
+  "name": "@ast-grep/lang-$$NAME$$",
+  "version": "0.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -22,7 +22,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@ast-grep/setup-lang": "workspace:*"
+    "@ast-grep/setup-lang": "0.0.2"
   },
   "peerDependencies": {
     "tree-sitter-cli": "0.24.6"
@@ -33,8 +33,7 @@
     }
   },
   "devDependencies": {
-    "@tree-sitter-grammars/tree-sitter-toml": "0.7.0",
-    "@ast-grep/nursery": "workspace:*"
+    "@ast-grep/nursery": "0.0.2"
   },
   "publishConfig": {
     "access": "public",
