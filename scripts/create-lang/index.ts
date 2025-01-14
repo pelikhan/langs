@@ -10,6 +10,7 @@ function required(s: string): string | true {
   return true
 }
 
+// https://github.com/vitejs/vite/blob/76082e3d3033b09b02b6db64de6e36942593c753/packages/create-vite/src/index.ts#L557
 function isValidPackageName(projectName: string) {
   return /^(?:@[a-z\d\-*~][a-z\d\-*._~]*\/)?[a-z\d\-~][a-z\d\-._~]*$/.test(
     projectName,
@@ -110,7 +111,11 @@ function installTreeSitterPackage(answer: Answers) {
 }
 
 async function main() {
-  const cwd = process.cwd()
+  let cwd = process.cwd()
+  if (process.argv.length > 2) {
+    const targetDir = process.argv[2]
+    cwd = path.join(cwd, targetDir)
+  }
   const config = await askConfiguration()
   await copyTemplate(cwd, config.includeDotFiles)
   await renameFiles(cwd, config)
