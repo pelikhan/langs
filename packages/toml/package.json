@@ -18,7 +18,7 @@
     "src",
     "prebuilds"
   ],
-  "keywords": [],
+  "keywords": ["ast-grep"],
   "author": "",
   "license": "ISC",
   "dependencies": {
