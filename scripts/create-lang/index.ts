@@ -101,13 +101,15 @@ async function renameFiles(dir: string, answer: Answers) {
     }
   }
 }
-function installTreeSitterPackage(answer: Answers) {
+function installTreeSitterPackage(cwd: string, answer: Answers) {
   console.log('Installing tree-sitter package...')
-  execSync(`pnpm install ${answer.treeSitterPackage} --save-dev --save-exact`)
+  execSync(`pnpm install ${answer.treeSitterPackage} --save-dev --save-exact`, {
+    cwd,
+  })
   console.log('Copying source code...')
-  execSync('pnpm run source')
+  execSync('pnpm run source', { cwd })
   console.log('Compiling')
-  execSync('pnpm run build')
+  execSync('pnpm run build', { cwd })
 }
 
 async function main() {
@@ -119,7 +121,7 @@ async function main() {
   const config = await askConfiguration()
   await copyTemplate(cwd, config.includeDotFiles)
   await renameFiles(cwd, config)
-  installTreeSitterPackage(config)
+  installTreeSitterPackage(cwd, config)
 }
 
 main()

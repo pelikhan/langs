@@ -15,6 +15,21 @@ importers:
         specifier: 9.1.7
         version: 9.1.7
 
+  packages:
+
+    dependencies:
+      '@ast-grep/setup-lang':
+        specifier: 0.0.2
+        version: 0.0.2
+
+    devDependencies:
+      '@ast-grep/nursery':
+        specifier: 0.0.2
+        version: 0.0.2
+      undefined:
+        specifier: 0.1.0
+        version: 0.1.0
+
   packages/toml:
     dependencies:
       '@ast-grep/setup-lang':
@@ -129,6 +144,12 @@ packages:
     resolution: {integrity: sha512-6heRMmomhSD0dkummRQ+R4xWXXmc41OaDPoPI49mKJXPyvwJPdPZUcQjXdIitOVL4uJV+qM2ZBucDPENDBSixw==}
     engines: {node: '>= 10'}
 
+  '@ast-grep/nursery@0.0.2':
+    resolution: {integrity: sha512-Epb5KpdiXbHEOegPvEGejGI8UFtpK44Uz8lSb03mVbtBMB1VflMJ6/3wZz2CsZ65S0cdq5YQqt1Rm7E+S68oHQ==}
+
+  '@ast-grep/setup-lang@0.0.2':
+    resolution: {integrity: sha512-z8ujIsXoj4afb6gyc1QPJ9ydsbnQ9zbaCHoB8sWi3T/6UfgEUtknhzfmuzRAQZ4PTtcKpUc3WskZiTe54NoGzg==}
+
   '@biomejs/biome@1.9.4':
     resolution: {integrity: sha512-1rkd7G70+o9KkTn5KLmDYXihGoTaIGO9PIIN2ZB7UJxFrWw04CZHPYiMRjYsaDvVV7hP1dYNRLxSANLaBFGpog==}
     engines: {node: '>=14.21.3'}
@@ -230,6 +251,10 @@ packages:
     engines: {node: '>=14.17'}
     hasBin: true
 
+  undefined@0.1.0:
+    resolution: {integrity: sha512-NkvZ+cpfGNrQvaCMPr2DytKuQfUTTUUloyqxhjLIzUm6OIBBgjH0zUIObsDejlvNHXBmXNCEt4IOFE6HB+ourA==}
+    deprecated: this package has been deprecated
+
   undici-types@6.20.0:
     resolution: {integrity: sha512-Ny6QZ2Nju20vw1SRHe3d9jVu6gJ+4e3+MMpqu7pqE5HT6WsTSlce++GQmK5UXS8mzV8DSYHrQH+Xrf2jVcuKNg==}
 
@@ -273,6 +298,12 @@ snapshots:
       '@ast-grep/napi-win32-arm64-msvc': 0.33.0
       '@ast-grep/napi-win32-ia32-msvc': 0.33.0
       '@ast-grep/napi-win32-x64-msvc': 0.33.0
+
+  '@ast-grep/nursery@0.0.2':
+    dependencies:
+      '@ast-grep/napi': 0.33.0
+
+  '@ast-grep/setup-lang@0.0.2': {}
 
   '@biomejs/biome@1.9.4':
     optionalDependencies:
@@ -341,5 +372,7 @@ snapshots:
   tree-sitter-cli@0.24.6: {}
 
   typescript@5.7.3: {}
+
+  undefined@0.1.0: {}
 
   undici-types@6.20.0: {}
