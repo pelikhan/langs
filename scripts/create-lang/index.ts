@@ -62,7 +62,11 @@ function askConfiguration() {
       message: 'Include gitignore and npm publish files?',
       initial: true,
     }
-  ])
+  ], {
+    onCancel: () => {
+      process.exit(1)
+    }
+  })
 }
 
 type Answers = Awaited<ReturnType<typeof askConfiguration>>
@@ -125,4 +129,3 @@ async function main() {
 }
 
 main()
-
