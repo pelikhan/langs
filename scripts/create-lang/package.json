@@ -1,6 +1,6 @@
 {
   "name": "@ast-grep/create-lang",
-  "version": "0.0.0-prerelease-1",
+  "version": "0.0.0-prerelease-2",
   "private": false,
   "description": "",
   "main": "index.js",
@@ -10,6 +10,12 @@
   "bin": {
     "create-lang": "index.js"
   },
+  "files": [
+    "index.js",
+    "template/.gitignore",
+    "template/.npmignore",
+    "template"
+  ],
   "scripts": {
     "compile-ts": "tsc",
     "prepublishOnly": "tsc"
