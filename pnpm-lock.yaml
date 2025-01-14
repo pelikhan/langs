@@ -31,6 +31,22 @@ importers:
         specifier: 0.5.0
         version: 0.5.0(tree-sitter@0.21.1)
 
+  packages/sql:
+    dependencies:
+      '@ast-grep/setup-lang':
+        specifier: 0.0.2
+        version: 0.0.2
+      tree-sitter-cli:
+        specifier: 0.24.6
+        version: 0.24.6
+    devDependencies:
+      '@ast-grep/nursery':
+        specifier: 0.0.2
+        version: 0.0.2
+      '@derekstride/tree-sitter-sql':
+        specifier: 0.3.7
+        version: 0.3.7(tree-sitter@0.21.1)
+
   packages/toml:
     dependencies:
       '@ast-grep/setup-lang':
@@ -262,6 +278,15 @@ packages:
     cpu: [x64]
     os: [win32]
 
+  '@derekstride/tree-sitter-sql@0.3.7':
+    resolution: {integrity: sha512-xLMa56M59NB6bavkmAPfeidZmgu068y3yEacoAtzwaSgZJnW7wPSyUQnjwMGmCsmKdqhRlSww+eDOCYIhFJcFg==}
+    peerDependencies:
+      tree-sitter: ^0.21.0
+      tree_sitter: '*'
+    peerDependenciesMeta:
+      tree_sitter:
+        optional: true
+
   '@tree-sitter-grammars/tree-sitter-toml@0.7.0':
     resolution: {integrity: sha512-873Kl518Qm5ghbWadISY41rwFjee0v+2bU4twwvAw2VAJcWwj2vBo3F3hOCXfbqHaFiqc4qh6eLhkMl2YZJS0g==}
     peerDependencies:
@@ -284,6 +309,9 @@ packages:
   kleur@3.0.3:
     resolution: {integrity: sha512-eTIzlVOSUR+JxdDFepEYcBMtZ9Qqdef+rnzWdRZuMbOywu5tO2w2N7rqjoANZ5k9vywhL6Br1VRjUIgTQx4E8w==}
     engines: {node: '>=6'}
+
+  node-addon-api@7.1.1:
+    resolution: {integrity: sha512-5m3bsyrjFWE1xf7nz7YXdN4udnVtXK6/Yfgn5qnahL6bCkf2yKt4k3nuTKAtT4r3IG8JNR2ncsIMdZuAzJjHQQ==}
 
   node-addon-api@8.3.0:
     resolution: {integrity: sha512-8VOpLHFrOQlAH+qA0ZzuGRlALRA6/LVh8QJldbrC4DY0hXoMP0l4Acq8TzFC018HztWiRqyCEj2aTWY2UvnJUg==}
@@ -455,6 +483,12 @@ snapshots:
   '@biomejs/cli-win32-x64@1.9.4':
     optional: true
 
+  '@derekstride/tree-sitter-sql@0.3.7(tree-sitter@0.21.1)':
+    dependencies:
+      node-addon-api: 7.1.1
+      node-gyp-build: 4.8.4
+      tree-sitter: 0.21.1
+
   '@tree-sitter-grammars/tree-sitter-toml@0.7.0':
     dependencies:
       node-addon-api: 8.3.0
@@ -472,6 +506,8 @@ snapshots:
   husky@9.1.7: {}
 
   kleur@3.0.3: {}
+
+  node-addon-api@7.1.1: {}
 
   node-addon-api@8.3.0: {}
 
