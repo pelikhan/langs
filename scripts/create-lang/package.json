@@ -1,6 +1,6 @@
 {
   "name": "@ast-grep/create-lang",
-  "version": "0.0.0-prerelease-3",
+  "version": "0.0.0-prerelease-4",
   "private": false,
   "description": "",
   "main": "index.js",
