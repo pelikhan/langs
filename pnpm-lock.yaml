@@ -20,9 +20,6 @@ importers:
       '@ast-grep/setup-lang':
         specifier: 0.0.2
         version: 0.0.2
-      tree-sitter-cli:
-        specifier: 0.24.6
-        version: 0.24.6
     devDependencies:
       '@ast-grep/nursery':
         specifier: 0.0.2
@@ -30,15 +27,15 @@ importers:
       tree-sitter-angular:
         specifier: 0.5.0
         version: 0.5.0(tree-sitter@0.21.1)
+      tree-sitter-cli:
+        specifier: 0.24.6
+        version: 0.24.6
 
   packages/sql:
     dependencies:
       '@ast-grep/setup-lang':
         specifier: 0.0.2
         version: 0.0.2
-      tree-sitter-cli:
-        specifier: 0.24.6
-        version: 0.24.6
     devDependencies:
       '@ast-grep/nursery':
         specifier: 0.0.2
@@ -46,15 +43,15 @@ importers:
       '@derekstride/tree-sitter-sql':
         specifier: 0.3.7
         version: 0.3.7(tree-sitter@0.21.1)
+      tree-sitter-cli:
+        specifier: 0.24.6
+        version: 0.24.6
 
   packages/toml:
     dependencies:
       '@ast-grep/setup-lang':
         specifier: workspace:*
         version: link:../../scripts/setup
-      tree-sitter-cli:
-        specifier: 0.24.6
-        version: 0.24.6
     devDependencies:
       '@ast-grep/nursery':
         specifier: workspace:*
@@ -62,6 +59,9 @@ importers:
       '@tree-sitter-grammars/tree-sitter-toml':
         specifier: 0.7.0
         version: 0.7.0
+      tree-sitter-cli:
+        specifier: 0.24.6
+        version: 0.24.6
 
   scripts/create-lang:
     dependencies:

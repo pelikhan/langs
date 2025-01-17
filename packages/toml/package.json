@@ -34,7 +34,8 @@
   },
   "devDependencies": {
     "@tree-sitter-grammars/tree-sitter-toml": "0.7.0",
-    "@ast-grep/nursery": "workspace:*"
+    "@ast-grep/nursery": "workspace:*",
+    "tree-sitter-cli": "0.24.6"
   },
   "publishConfig": {
     "access": "public",
