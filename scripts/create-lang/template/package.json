@@ -41,6 +41,8 @@
     "registry": "https://registry.npmjs.org/"
   },
   "pnpm": {
-    "neverBuiltDependencies": []
+    "onlyBuiltDependencies": [
+      "tree-sitter-cli"
+    ]
   }
 }
