@@ -39,5 +39,11 @@
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "$$PACKAGE_NAME$$",
+      "tree-sitter-cli"
+    ]
   }
 }
