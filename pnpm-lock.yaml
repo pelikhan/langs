@@ -18,8 +18,8 @@ importers:
   packages/angular:
     dependencies:
       '@ast-grep/setup-lang':
-        specifier: 0.0.2
-        version: 0.0.2
+        specifier: 0.0.3
+        version: 0.0.3
     devDependencies:
       '@ast-grep/nursery':
         specifier: 0.0.2
@@ -34,8 +34,8 @@ importers:
   packages/sql:
     dependencies:
       '@ast-grep/setup-lang':
-        specifier: 0.0.2
-        version: 0.0.2
+        specifier: 0.0.3
+        version: 0.0.3
     devDependencies:
       '@ast-grep/nursery':
         specifier: 0.0.2
@@ -222,8 +222,8 @@ packages:
   '@ast-grep/nursery@0.0.2':
     resolution: {integrity: sha512-Epb5KpdiXbHEOegPvEGejGI8UFtpK44Uz8lSb03mVbtBMB1VflMJ6/3wZz2CsZ65S0cdq5YQqt1Rm7E+S68oHQ==}
 
-  '@ast-grep/setup-lang@0.0.2':
-    resolution: {integrity: sha512-z8ujIsXoj4afb6gyc1QPJ9ydsbnQ9zbaCHoB8sWi3T/6UfgEUtknhzfmuzRAQZ4PTtcKpUc3WskZiTe54NoGzg==}
+  '@ast-grep/setup-lang@0.0.3':
+    resolution: {integrity: sha512-+ZNOuf0r7ABVwOANrrQpUrUv7xyuhsZGyQ88WZCH/euQmIEvSH3JsUFevg/60M7hi8NVh4vfSQs6ajTpumSzxg==}
 
   '@biomejs/biome@1.9.4':
     resolution: {integrity: sha512-1rkd7G70+o9KkTn5KLmDYXihGoTaIGO9PIIN2ZB7UJxFrWw04CZHPYiMRjYsaDvVV7hP1dYNRLxSANLaBFGpog==}
@@ -446,7 +446,7 @@ snapshots:
     dependencies:
       '@ast-grep/napi': 0.33.0
 
-  '@ast-grep/setup-lang@0.0.2': {}
+  '@ast-grep/setup-lang@0.0.3': {}
 
   '@biomejs/biome@1.9.4':
     optionalDependencies:
