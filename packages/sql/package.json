@@ -1,6 +1,6 @@
 {
   "name": "@ast-grep/lang-sql",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -24,7 +24,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@ast-grep/setup-lang": "0.0.2"
+    "@ast-grep/setup-lang": "0.0.3"
   },
   "peerDependencies": {
     "tree-sitter-cli": "0.24.6"
@@ -42,5 +42,10 @@
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "tree-sitter-cli"
+    ]
   }
 }

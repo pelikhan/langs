@@ -56,7 +56,7 @@ const PLATFORM_MAP: Record<string, string> = {
 }
 
 const ARCH_MAP: Record<string, string> = {
-  x64: 'x64',
+  x64: 'X64',
   arm64: 'ARM64',
 }
 
