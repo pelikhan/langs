@@ -14,10 +14,10 @@ pnpm install @tree-sitter/cli --save-dev
 ## Usage
 
 ```js
-import C++ from '@ast-grep/lang-cpp'
+import Cpp from '@ast-grep/lang-cpp'
 import { registerDynamicLanguage, parse } from '@ast-grep/napi'
 
-registerDynamicLanguage({ C++ })
+registerDynamicLanguage({ Cpp })
 
 const sg = parse('C++', `your code`)
 sg.root().kind()

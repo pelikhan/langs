@@ -3,10 +3,24 @@ const languageRegistration = require('./index')
 
 setup({
   dirname: __dirname,
-  name: 'C++',
+  name: 'Cpp',
   treeSitterPackage: 'tree-sitter-cpp',
   languageRegistration,
   testRunner: (parse) => {
-    // add test here
+    const sg = parse(`
+      template <typename T>
+      T add(T a, T b) {
+        return a + b;
+      }
+
+      int main() {
+        int a = 123;
+        int result = add<int>(5, 10);
+        return 0;
+      }
+      `)
+    const root = sg.root()
+    const node = root.find('$T $A = 123')
+    assert.equal(node.kind(), 'declaration')
   }
 })
