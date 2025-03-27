@@ -56,6 +56,9 @@ importers:
       '@ast-grep/nursery':
         specifier: 0.0.2
         version: 0.0.2
+      tree-sitter-c-sharp:
+        specifier: 0.23.1
+        version: 0.23.1(tree-sitter@0.21.1)
       tree-sitter-cli:
         specifier: 0.24.6
         version: 0.24.6
@@ -366,6 +369,14 @@ packages:
       tree_sitter:
         optional: true
 
+  tree-sitter-c-sharp@0.23.1:
+    resolution: {integrity: sha512-9zZ4FlcTRWWfRf6f4PgGhG8saPls6qOOt75tDfX7un9vQZJmARjPrAC6yBNCX2T/VKcCjIDbgq0evFaB3iGhQw==}
+    peerDependencies:
+      tree-sitter: ^0.21.1
+    peerDependenciesMeta:
+      tree-sitter:
+        optional: true
+
   tree-sitter-c@0.23.5:
     resolution: {integrity: sha512-riDWhqVIt8J14R7G0YMKlUy8E7eYR0Vp6DSGL90nX5CTAXkORCyp4WaOgNtfo8dEsHyZF5e/4E9Z9kWj+qLnTQ==}
     peerDependencies:
@@ -563,6 +574,13 @@ snapshots:
       node-gyp-build: 4.8.4
       tree-sitter: 0.21.1
       tree-sitter-html: 0.20.4(tree-sitter@0.21.1)
+
+  tree-sitter-c-sharp@0.23.1(tree-sitter@0.21.1):
+    dependencies:
+      node-addon-api: 8.3.0
+      node-gyp-build: 4.8.4
+    optionalDependencies:
+      tree-sitter: 0.21.1
 
   tree-sitter-c@0.23.5:
     dependencies:

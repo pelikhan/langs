@@ -1,11 +1,11 @@
-# ast-grep napi language for CSharp
+# ast-grep napi language for csharp
 
 ## Installation
 
 In a pnpm project, run:
 
 ```bash
-pnpm install @ast-grep/lang-csharp
+pnpm install @ast-grep/csharp
 pnpm install @ast-grep/napi
 # install the tree-sitter-cli if no prebuild is available
 pnpm install @tree-sitter/cli --save-dev
@@ -14,11 +14,11 @@ pnpm install @tree-sitter/cli --save-dev
 ## Usage
 
 ```js
-import CSharp from '@ast-grep/lang-csharp'
+import csharp from '@ast-grep/csharp'
 import { registerDynamicLanguage, parse } from '@ast-grep/napi'
 
-registerDynamicLanguage({ CSharp })
+registerDynamicLanguage({ csharp })
 
-const sg = parse('CSharp', `your code`)
+const sg = parse('csharp', `your code`)
 sg.root().kind()
 ```

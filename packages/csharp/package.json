@@ -1,5 +1,5 @@
 {
-  "name": "@ast-grep/lang-csharp",
+  "name": "@ast-grep/csharp",
   "version": "0.0.1",
   "description": "",
   "main": "index.js",
@@ -18,7 +18,9 @@
     "src",
     "prebuilds"
   ],
-  "keywords": ["ast-grep"],
+  "keywords": [
+    "ast-grep"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
@@ -34,6 +36,7 @@
   },
   "devDependencies": {
     "@ast-grep/nursery": "0.0.2",
+    "tree-sitter-c-sharp": "0.23.1",
     "tree-sitter-cli": "0.24.6"
   },
   "publishConfig": {
@@ -42,7 +45,7 @@
   },
   "pnpm": {
     "onlyBuiltDependencies": [
-      "@ast-grep/lang-csharp",
+      "@ast-grep/csharp",
       "tree-sitter-cli"
     ]
   }
