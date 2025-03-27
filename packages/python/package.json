@@ -1,5 +1,5 @@
 {
-  "name": "@ast-grep/lang-csharp",
+  "name": "@ast-grep/lang-python",
   "version": "0.0.1",
   "description": "",
   "main": "index.js",
@@ -36,8 +36,8 @@
   },
   "devDependencies": {
     "@ast-grep/nursery": "0.0.2",
-    "tree-sitter-c-sharp": "0.23.1",
-    "tree-sitter-cli": "0.24.6"
+    "tree-sitter-cli": "0.24.6",
+    "tree-sitter-python": "0.23.6"
   },
   "publishConfig": {
     "access": "public",
@@ -45,7 +45,7 @@
   },
   "pnpm": {
     "onlyBuiltDependencies": [
-      "@ast-grep/lang-csharp",
+      "@ast-grep/lang-python",
       "tree-sitter-cli"
     ]
   }
