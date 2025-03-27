@@ -14,10 +14,10 @@ pnpm install @tree-sitter/cli --save-dev
 ## Usage
 
 ```js
-import Python from '@ast-grep/lang-python'
+import python from '@ast-grep/lang-python'
 import { registerDynamicLanguage, parse } from '@ast-grep/napi'
 
-registerDynamicLanguage({ Python })
+registerDynamicLanguage({ python })
 
 const sg = parse('Python', `your code`)
 sg.root().kind()
