@@ -19,7 +19,8 @@
     "prebuilds"
   ],
   "keywords": [
-    "ast-grep"
+    "ast-grep",
+    "ast-grep-lang"
   ],
   "author": "",
   "license": "ISC",
