@@ -22,7 +22,15 @@ jobs:
         with:
           cache: pnpm
       - name: Install dependencies
-        run: pnpm install --ignore-scripts
+        run: pnpm install
+
+      - name: Build and test
+        run: |
+          pnpm -r compile-ts
+          pnpm -r source
+          pnpm -r build
+          pnpm -r test
+
       - name: Run linting/formatting checks
         run: |
           pnpm lint:ci
