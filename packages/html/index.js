@@ -5,5 +5,5 @@ module.exports = {
   libraryPath: libPath,
   extensions: ['html', 'htm', 'xhtml'],
   languageSymbol: 'tree_sitter_html',
-  expandoChar: '$',
+  expandoChar: 'z',
 }
