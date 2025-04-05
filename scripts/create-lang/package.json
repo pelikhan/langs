@@ -4,9 +4,7 @@
   "private": false,
   "description": "",
   "main": "index.js",
-  "keywords": [
-    "ast-grep"
-  ],
+  "keywords": ["ast-grep"],
   "author": "",
   "license": "ISC",
   "bin": {
