@@ -5,7 +5,7 @@ const languageRegistration = require('./index')
 setup({
   dirname: __dirname,
   name: 'lua',
-  treeSitterPackage: 'tree-sitter-lua',
+  treeSitterPackage: '@tree-sitter-grammars/tree-sitter-lua',
   languageRegistration,
   testRunner: parse => {
     const sg = parse('print("Hello World")')
