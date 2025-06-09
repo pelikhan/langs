@@ -1,6 +1,6 @@
 {
   "name": "@ast-grep/lang-go",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -33,7 +33,7 @@
     }
   },
   "devDependencies": {
-    "@ast-grep/nursery": "0.0.4",
+    "@ast-grep/nursery": "0.0.5",
     "tree-sitter-go": "0.23.4",
     "tree-sitter-cli": "0.25.6"
   },

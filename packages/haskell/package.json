@@ -1,6 +1,6 @@
 {
   "name": "@ast-grep/lang-haskell",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -33,7 +33,7 @@
     }
   },
   "devDependencies": {
-    "@ast-grep/nursery": "0.0.4",
+    "@ast-grep/nursery": "0.0.5",
     "tree-sitter-cli": "0.25.6",
     "tree-sitter-haskell": "0.23.1"
   },
