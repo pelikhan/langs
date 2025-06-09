@@ -274,6 +274,22 @@ importers:
         specifier: 0.25.6
         version: 0.25.6
 
+  packages/markdown:
+    dependencies:
+      '@ast-grep/setup-lang':
+        specifier: 0.0.3
+        version: 0.0.3
+    devDependencies:
+      '@ast-grep/nursery':
+        specifier: 0.0.4
+        version: 0.0.4
+      '@tree-sitter-grammars/tree-sitter-markdown':
+        specifier: 0.3.2
+        version: 0.3.2(tree-sitter@0.21.1)
+      tree-sitter-cli:
+        specifier: 0.25.6
+        version: 0.25.6
+
   packages/php:
     dependencies:
       '@ast-grep/setup-lang':
@@ -695,6 +711,15 @@ packages:
 
   '@tree-sitter-grammars/tree-sitter-lua@0.2.0':
     resolution: {integrity: sha512-VPk971J3hBUNr7CpZJvgTU5UmEkW8iMQ0Sk6br4O3xL00XFEO4PCjSSGeYYakRgPAJiIR8J594UcBK+7ilBvqw==}
+    peerDependencies:
+      tree-sitter: ^0.21.1
+      tree_sitter: '*'
+    peerDependenciesMeta:
+      tree_sitter:
+        optional: true
+
+  '@tree-sitter-grammars/tree-sitter-markdown@0.3.2':
+    resolution: {integrity: sha512-hQXCcDVvg2t4E8cn7zz6jjIBerzk9E9ZlHxJp5IrUOpY4s1YVpXJbMeWZks2/V7lmkPRnnkM8IrTbQ5ltwEOnA==}
     peerDependencies:
       tree-sitter: ^0.21.1
       tree_sitter: '*'
@@ -1513,6 +1538,12 @@ snapshots:
       fastq: 1.19.1
 
   '@tree-sitter-grammars/tree-sitter-lua@0.2.0(tree-sitter@0.21.1)':
+    dependencies:
+      node-addon-api: 8.3.1
+      node-gyp-build: 4.8.4
+      tree-sitter: 0.21.1
+
+  '@tree-sitter-grammars/tree-sitter-markdown@0.3.2(tree-sitter@0.21.1)':
     dependencies:
       node-addon-api: 8.3.1
       node-gyp-build: 4.8.4
