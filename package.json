@@ -10,6 +10,7 @@
     "format:ci": "biome format",
     "lint": "biome lint --fix",
     "lint:ci": "biome lint",
+    "changeset": "changeset",
     "prepare": "husky"
   },
   "keywords": [],

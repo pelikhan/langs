@@ -25,8 +25,8 @@ importers:
         version: 0.0.3
     devDependencies:
       '@ast-grep/nursery':
-        specifier: 0.0.3
-        version: 0.0.3
+        specifier: 0.0.4
+        version: 0.0.4
       tree-sitter-angular:
         specifier: 0.6.0
         version: 0.6.0(tree-sitter@0.21.1)
@@ -41,8 +41,8 @@ importers:
         version: 0.0.3
     devDependencies:
       '@ast-grep/nursery':
-        specifier: 0.0.3
-        version: 0.0.3
+        specifier: 0.0.4
+        version: 0.0.4
       tree-sitter-bash:
         specifier: 0.23.3
         version: 0.23.3(tree-sitter@0.21.1)
@@ -57,8 +57,8 @@ importers:
         version: 0.0.3
     devDependencies:
       '@ast-grep/nursery':
-        specifier: 0.0.3
-        version: 0.0.3
+        specifier: 0.0.4
+        version: 0.0.4
       tree-sitter-c:
         specifier: 0.23.5
         version: 0.23.5
@@ -73,8 +73,8 @@ importers:
         version: 0.0.3
     devDependencies:
       '@ast-grep/nursery':
-        specifier: 0.0.3
-        version: 0.0.3
+        specifier: 0.0.4
+        version: 0.0.4
       tree-sitter-cli:
         specifier: 0.24.6
         version: 0.24.6
@@ -89,8 +89,8 @@ importers:
         version: 0.0.3
     devDependencies:
       '@ast-grep/nursery':
-        specifier: 0.0.3
-        version: 0.0.3
+        specifier: 0.0.4
+        version: 0.0.4
       tree-sitter-c-sharp:
         specifier: 0.23.1
         version: 0.23.1(tree-sitter@0.21.1)
@@ -105,8 +105,8 @@ importers:
         version: 0.0.3
     devDependencies:
       '@ast-grep/nursery':
-        specifier: 0.0.3
-        version: 0.0.3
+        specifier: 0.0.4
+        version: 0.0.4
       tree-sitter-cli:
         specifier: 0.24.6
         version: 0.24.6
@@ -121,8 +121,8 @@ importers:
         version: 0.0.3
     devDependencies:
       '@ast-grep/nursery':
-        specifier: 0.0.3
-        version: 0.0.3
+        specifier: 0.0.4
+        version: 0.0.4
       tree-sitter-cli:
         specifier: 0.24.6
         version: 0.24.6
@@ -137,8 +137,8 @@ importers:
         version: 0.0.3
     devDependencies:
       '@ast-grep/nursery':
-        specifier: 0.0.3
-        version: 0.0.3
+        specifier: 0.0.4
+        version: 0.0.4
       tree-sitter-cli:
         specifier: 0.24.6
         version: 0.24.6
@@ -153,8 +153,8 @@ importers:
         version: 0.0.3
     devDependencies:
       '@ast-grep/nursery':
-        specifier: 0.0.3
-        version: 0.0.3
+        specifier: 0.0.4
+        version: 0.0.4
       tree-sitter-cli:
         specifier: 0.24.6
         version: 0.24.6
@@ -169,8 +169,8 @@ importers:
         version: 0.0.3
     devDependencies:
       '@ast-grep/nursery':
-        specifier: 0.0.3
-        version: 0.0.3
+        specifier: 0.0.4
+        version: 0.0.4
       tree-sitter-cli:
         specifier: 0.24.6
         version: 0.24.6
@@ -185,8 +185,8 @@ importers:
         version: 0.0.3
     devDependencies:
       '@ast-grep/nursery':
-        specifier: 0.0.3
-        version: 0.0.3
+        specifier: 0.0.4
+        version: 0.0.4
       tree-sitter-cli:
         specifier: 0.24.6
         version: 0.24.6
@@ -201,8 +201,8 @@ importers:
         version: 0.0.3
     devDependencies:
       '@ast-grep/nursery':
-        specifier: 0.0.3
-        version: 0.0.3
+        specifier: 0.0.4
+        version: 0.0.4
       tree-sitter-cli:
         specifier: 0.24.6
         version: 0.24.6
@@ -217,8 +217,8 @@ importers:
         version: 0.0.3
     devDependencies:
       '@ast-grep/nursery':
-        specifier: 0.0.3
-        version: 0.0.3
+        specifier: 0.0.4
+        version: 0.0.4
       tree-sitter-cli:
         specifier: 0.24.6
         version: 0.24.6
@@ -233,8 +233,8 @@ importers:
         version: 0.0.3
     devDependencies:
       '@ast-grep/nursery':
-        specifier: 0.0.3
-        version: 0.0.3
+        specifier: 0.0.4
+        version: 0.0.4
       tree-sitter-cli:
         specifier: 0.24.6
         version: 0.24.6
@@ -249,8 +249,8 @@ importers:
         version: 0.0.3
     devDependencies:
       '@ast-grep/nursery':
-        specifier: 0.0.3
-        version: 0.0.3
+        specifier: 0.0.4
+        version: 0.0.4
       tree-sitter-cli:
         specifier: 0.24.6
         version: 0.24.6
@@ -265,8 +265,8 @@ importers:
         version: 0.0.3
     devDependencies:
       '@ast-grep/nursery':
-        specifier: 0.0.3
-        version: 0.0.3
+        specifier: 0.0.4
+        version: 0.0.4
       '@tree-sitter-grammars/tree-sitter-lua':
         specifier: 0.2.0
         version: 0.2.0(tree-sitter@0.21.1)
@@ -281,8 +281,8 @@ importers:
         version: 0.0.3
     devDependencies:
       '@ast-grep/nursery':
-        specifier: workspace:*
-        version: link:../../scripts/nursery
+        specifier: 0.0.4
+        version: 0.0.4
       tree-sitter-cli:
         specifier: 0.24.6
         version: 0.24.6
@@ -297,8 +297,8 @@ importers:
         version: 0.0.3
     devDependencies:
       '@ast-grep/nursery':
-        specifier: 0.0.3
-        version: 0.0.3
+        specifier: 0.0.4
+        version: 0.0.4
       tree-sitter-cli:
         specifier: 0.24.6
         version: 0.24.6
@@ -313,8 +313,8 @@ importers:
         version: 0.0.3
     devDependencies:
       '@ast-grep/nursery':
-        specifier: 0.0.3
-        version: 0.0.3
+        specifier: 0.0.4
+        version: 0.0.4
       tree-sitter-cli:
         specifier: 0.24.6
         version: 0.24.6
@@ -329,8 +329,8 @@ importers:
         version: 0.0.3
     devDependencies:
       '@ast-grep/nursery':
-        specifier: 0.0.3
-        version: 0.0.3
+        specifier: 0.0.4
+        version: 0.0.4
       tree-sitter-cli:
         specifier: 0.24.6
         version: 0.24.6
@@ -345,8 +345,8 @@ importers:
         version: 0.0.3
     devDependencies:
       '@ast-grep/nursery':
-        specifier: 0.0.3
-        version: 0.0.3
+        specifier: 0.0.4
+        version: 0.0.4
       tree-sitter-cli:
         specifier: 0.24.6
         version: 0.24.6
@@ -361,8 +361,8 @@ importers:
         version: 0.0.3
     devDependencies:
       '@ast-grep/nursery':
-        specifier: 0.0.3
-        version: 0.0.3
+        specifier: 0.0.4
+        version: 0.0.4
       '@derekstride/tree-sitter-sql':
         specifier: 0.3.8
         version: 0.3.8(tree-sitter@0.21.1)
@@ -377,8 +377,8 @@ importers:
         version: 0.0.3
     devDependencies:
       '@ast-grep/nursery':
-        specifier: 0.0.3
-        version: 0.0.3
+        specifier: 0.0.4
+        version: 0.0.4
       tree-sitter-cli:
         specifier: 0.24.6
         version: 0.24.6
@@ -409,8 +409,8 @@ importers:
         version: 0.0.3
     devDependencies:
       '@ast-grep/nursery':
-        specifier: 0.0.3
-        version: 0.0.3
+        specifier: 0.0.4
+        version: 0.0.4
       tree-sitter-cli:
         specifier: 0.24.6
         version: 0.24.6
@@ -425,8 +425,8 @@ importers:
         version: 0.0.3
     devDependencies:
       '@ast-grep/nursery':
-        specifier: 0.0.3
-        version: 0.0.3
+        specifier: 0.0.4
+        version: 0.0.4
       tree-sitter-cli:
         specifier: 0.24.6
         version: 0.24.6
@@ -441,8 +441,8 @@ importers:
         version: 0.0.3
     devDependencies:
       '@ast-grep/nursery':
-        specifier: 0.0.2
-        version: 0.0.2
+        specifier: 0.0.4
+        version: 0.0.4
       '@tree-sitter-grammars/tree-sitter-yaml':
         specifier: 0.7.1
         version: 0.7.1
@@ -490,34 +490,10 @@ importers:
 
 packages:
 
-  '@ast-grep/napi-darwin-arm64@0.33.0':
-    resolution: {integrity: sha512-FsBQiBNGbqeU6z2sjFgnV6MXuBa0wYUb4PViMnqsKLeWiO7kRii5crmXLCtdTD2hufXTG6Rll8X46AkYOAwGGQ==}
-    engines: {node: '>= 10'}
-    cpu: [arm64]
-    os: [darwin]
-
-  '@ast-grep/napi-darwin-arm64@0.36.2':
-    resolution: {integrity: sha512-0dzW+5SRuUxAlfwgMiUWXSvvyVD3nffzLtH5RhH2a1VXbQxi2UFWZqtfhv6e27iIUTnPfZDnZGNRw8FZgttMfQ==}
-    engines: {node: '>= 10'}
-    cpu: [arm64]
-    os: [darwin]
-
   '@ast-grep/napi-darwin-arm64@0.38.5':
     resolution: {integrity: sha512-Ky60f2O2Od7ySDLF8QOPX5PvdNw/1DGlqxLvKYF1wJUMAY3/7ZRGxDSZ+m3BwvYCMhvKCLWSthQ3eMuZyEUZzQ==}
     engines: {node: '>= 10'}
     cpu: [arm64]
-    os: [darwin]
-
-  '@ast-grep/napi-darwin-x64@0.33.0':
-    resolution: {integrity: sha512-rWo1wG7fc7K20z9ExIeN6U4QqjHhoQSpBDDnmxKTR0nIwPfyMq338sS4sWZomutxprcZDtWrekxH1lXjNvfuiA==}
-    engines: {node: '>= 10'}
-    cpu: [x64]
-    os: [darwin]
-
-  '@ast-grep/napi-darwin-x64@0.36.2':
-    resolution: {integrity: sha512-7TPdnq55OBXGcJLDARObI5BUFbp0AVRMGEzjnIBMWbRSowlDVTH7qBWwNAYk4auCdkwG8EBL40BUIHmagzpoCw==}
-    engines: {node: '>= 10'}
-    cpu: [x64]
     os: [darwin]
 
   '@ast-grep/napi-darwin-x64@0.38.5':
@@ -526,32 +502,8 @@ packages:
     cpu: [x64]
     os: [darwin]
 
-  '@ast-grep/napi-linux-arm64-gnu@0.33.0':
-    resolution: {integrity: sha512-3ZnA2k57kxfvLg4s9+6rHaCx1FbWt0EF8fumJMf5nwevu7GbVOOhCkzAetZe80FBgZuIOSR4IS2QMj9ZHI0UdQ==}
-    engines: {node: '>= 10'}
-    cpu: [arm64]
-    os: [linux]
-
-  '@ast-grep/napi-linux-arm64-gnu@0.36.2':
-    resolution: {integrity: sha512-/h51eEnEYCq4bclzhynH+964LQXDKXgNb2Un+Y9TLOU8VRaGNawTkZkFq+iBp8T1hl0CznnsQQsg+9pHDHprHQ==}
-    engines: {node: '>= 10'}
-    cpu: [arm64]
-    os: [linux]
-
   '@ast-grep/napi-linux-arm64-gnu@0.38.5':
     resolution: {integrity: sha512-8ePpkH15Patg4PdwreB64YXaIynyaNm6RbnkMKnZ6jFYnAa00NeWZ7lv1vdD01q5pzI4k3jx6deBGEvgRZ8hww==}
-    engines: {node: '>= 10'}
-    cpu: [arm64]
-    os: [linux]
-
-  '@ast-grep/napi-linux-arm64-musl@0.33.0':
-    resolution: {integrity: sha512-oUGZgCaVCijFgvC+X52ttgoWUqgrIsSVJZgn+1VBY3n4mpzcoYAghFomSUbRTBUL2ebvZweA33Klqks4okY61w==}
-    engines: {node: '>= 10'}
-    cpu: [arm64]
-    os: [linux]
-
-  '@ast-grep/napi-linux-arm64-musl@0.36.2':
-    resolution: {integrity: sha512-RIuk0VaQW2b5uOPJzuYFQBwMZIEVnp6maXPjnatUHxfniirSI172E7LtOU/FIEpCjU9Fpq23A79S43ImFt1KLA==}
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [linux]
@@ -562,32 +514,8 @@ packages:
     cpu: [arm64]
     os: [linux]
 
-  '@ast-grep/napi-linux-x64-gnu@0.33.0':
-    resolution: {integrity: sha512-QTAkfxQSsOGRza0hnkeAgJDQqR00iDerRNq42dOGIzgF+Kse491By3UmBEMG4oCbv17yYcBBlknQkzKSKtigjw==}
-    engines: {node: '>= 10'}
-    cpu: [x64]
-    os: [linux]
-
-  '@ast-grep/napi-linux-x64-gnu@0.36.2':
-    resolution: {integrity: sha512-Xmb50HPfRNi+iLtHp+8/dqiTd8tjArYxOdj1tZzjRndpKhFpQDVrcOnPFObDCRgxVeLovdql9A1ad6BMcEL01Q==}
-    engines: {node: '>= 10'}
-    cpu: [x64]
-    os: [linux]
-
   '@ast-grep/napi-linux-x64-gnu@0.38.5':
     resolution: {integrity: sha512-BD8PEBras1EfbRHpZXUXJrAfaXcCL2ZZTgk+BNd/p//CWGqVQRbbVib5irRRETJf804ElXPD7uLV6IWeQP5u+w==}
-    engines: {node: '>= 10'}
-    cpu: [x64]
-    os: [linux]
-
-  '@ast-grep/napi-linux-x64-musl@0.33.0':
-    resolution: {integrity: sha512-PW6bZO7MyQsBNZv0idI/Ah6ak66T8LqZ21wBGjtQp9NDGViOtkLeu+eJJGaZjMqUdidKHKgmMKXksZHl2m8ulQ==}
-    engines: {node: '>= 10'}
-    cpu: [x64]
-    os: [linux]
-
-  '@ast-grep/napi-linux-x64-musl@0.36.2':
-    resolution: {integrity: sha512-RSnqCsl3OBfJWh2rETtv3o7xd4QnbB2YTh6H6oYfFhhX0tlon/V+bUXI77hU2/W73hj9GHqWZsygsF43NXn/Hw==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [linux]
@@ -598,34 +526,10 @@ packages:
     cpu: [x64]
     os: [linux]
 
-  '@ast-grep/napi-win32-arm64-msvc@0.33.0':
-    resolution: {integrity: sha512-ijmFQcFc32JOIQlSfnhDJpb3qFb2RhrRqfeY0EHHN1xRSGwZHfsHTSS66nKR2sREmxTIMgxXOtylKicbyyMVKA==}
-    engines: {node: '>= 10'}
-    cpu: [arm64]
-    os: [win32]
-
-  '@ast-grep/napi-win32-arm64-msvc@0.36.2':
-    resolution: {integrity: sha512-/Q85h8F9K2G8qig0lndZWb+ykCfhfpSN27F3i7Aw5C0Ph7S6vFH76xn3l3dJTZb2CwUSsv4JNoqmFmY4B8DExQ==}
-    engines: {node: '>= 10'}
-    cpu: [arm64]
-    os: [win32]
-
   '@ast-grep/napi-win32-arm64-msvc@0.38.5':
     resolution: {integrity: sha512-25wyag97kE6nv1hHaNuPgORYbSUndgsAUKCSarsEDI5BBp6h0YDdFY+VzM+SH62F0RBqj0bkpud38UblftfgFw==}
     engines: {node: '>= 10'}
     cpu: [arm64]
-    os: [win32]
-
-  '@ast-grep/napi-win32-ia32-msvc@0.33.0':
-    resolution: {integrity: sha512-NNIb2VK3Z2BwKp0QJSw8gkhwOUp85SgTsxJ38p+wIUAA/KzAKCJOmyOaZ301qGHt4gL+jTHgTIvJJX+9eT/REg==}
-    engines: {node: '>= 10'}
-    cpu: [ia32]
-    os: [win32]
-
-  '@ast-grep/napi-win32-ia32-msvc@0.36.2':
-    resolution: {integrity: sha512-bDdwErB7zf9DvRx3kNZyMKJb9by5ra24WAXSiVzI8MR387ibZP9UCTzKuGqPrbuZADYWiOgsg3nXMklyPFtmhQ==}
-    engines: {node: '>= 10'}
-    cpu: [ia32]
     os: [win32]
 
   '@ast-grep/napi-win32-ia32-msvc@0.38.5':
@@ -634,41 +538,18 @@ packages:
     cpu: [ia32]
     os: [win32]
 
-  '@ast-grep/napi-win32-x64-msvc@0.33.0':
-    resolution: {integrity: sha512-gW7viQQjdPA1HoCkpCqoonC81TOwcpP828w/XqZFE/L6uhD8SF2usul8KNBQOiX3O7/fqYEOnbtWMCrwZIqG1Q==}
-    engines: {node: '>= 10'}
-    cpu: [x64]
-    os: [win32]
-
-  '@ast-grep/napi-win32-x64-msvc@0.36.2':
-    resolution: {integrity: sha512-LVZ2DqP9fRfyUceE0BGnlKoPmSx3dYYApSEUdt82Pn7jEVWpFFyTLFmZ9ILiCSaVc6urMJpKWdxAHFqDNNlGfg==}
-    engines: {node: '>= 10'}
-    cpu: [x64]
-    os: [win32]
-
   '@ast-grep/napi-win32-x64-msvc@0.38.5':
     resolution: {integrity: sha512-DNeLIwkK/BKyYX5ymmeioqpXOXGcOxj2OgLpWiyk/VawwQe6uGgrH97k3pRku513dzHKayfizvU2igjj9oTJuA==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [win32]
 
-  '@ast-grep/napi@0.33.0':
-    resolution: {integrity: sha512-6heRMmomhSD0dkummRQ+R4xWXXmc41OaDPoPI49mKJXPyvwJPdPZUcQjXdIitOVL4uJV+qM2ZBucDPENDBSixw==}
-    engines: {node: '>= 10'}
-
-  '@ast-grep/napi@0.36.2':
-    resolution: {integrity: sha512-ByenQQ0BtqqY0pvlmipvkDv/cKl/9vVjBydS7hloXOdmXPoUF0pHdlilC7ZfrRW97EzPQQZT2jgHl2tu7zg9QA==}
-    engines: {node: '>= 10'}
-
   '@ast-grep/napi@0.38.5':
     resolution: {integrity: sha512-lhuekQ5khQd70GaHatR+Ge4AcYtdYjzO372TlXI7cQOdvDcrL5MOR7CnQXvUe1cuJHTx2UJd42KK6z6Qza8Tjw==}
     engines: {node: '>= 10'}
 
-  '@ast-grep/nursery@0.0.2':
-    resolution: {integrity: sha512-Epb5KpdiXbHEOegPvEGejGI8UFtpK44Uz8lSb03mVbtBMB1VflMJ6/3wZz2CsZ65S0cdq5YQqt1Rm7E+S68oHQ==}
-
-  '@ast-grep/nursery@0.0.3':
-    resolution: {integrity: sha512-fIOozkRrRHcDMv5t06SqUjQMkAwFgn1aiAtpXtOVpF19VE4oWK5MJOXbjI034cNGFDGGmCyMh7r0y2iWlTRRLw==}
+  '@ast-grep/nursery@0.0.4':
+    resolution: {integrity: sha512-be35/LLpRrDHOwZ7HEs+yryhjjtAZ2x6X20hoogQO3iiD3H9Hvz7F5AqGxvzk4qfGP2UybwJjiuCHZ8lNIgZqA==}
 
   '@ast-grep/setup-lang@0.0.3':
     resolution: {integrity: sha512-+ZNOuf0r7ABVwOANrrQpUrUv7xyuhsZGyQ88WZCH/euQmIEvSH3JsUFevg/60M7hi8NVh4vfSQs6ajTpumSzxg==}
@@ -1374,110 +1255,32 @@ packages:
 
 snapshots:
 
-  '@ast-grep/napi-darwin-arm64@0.33.0':
-    optional: true
-
-  '@ast-grep/napi-darwin-arm64@0.36.2':
-    optional: true
-
   '@ast-grep/napi-darwin-arm64@0.38.5':
-    optional: true
-
-  '@ast-grep/napi-darwin-x64@0.33.0':
-    optional: true
-
-  '@ast-grep/napi-darwin-x64@0.36.2':
     optional: true
 
   '@ast-grep/napi-darwin-x64@0.38.5':
     optional: true
 
-  '@ast-grep/napi-linux-arm64-gnu@0.33.0':
-    optional: true
-
-  '@ast-grep/napi-linux-arm64-gnu@0.36.2':
-    optional: true
-
   '@ast-grep/napi-linux-arm64-gnu@0.38.5':
-    optional: true
-
-  '@ast-grep/napi-linux-arm64-musl@0.33.0':
-    optional: true
-
-  '@ast-grep/napi-linux-arm64-musl@0.36.2':
     optional: true
 
   '@ast-grep/napi-linux-arm64-musl@0.38.5':
     optional: true
 
-  '@ast-grep/napi-linux-x64-gnu@0.33.0':
-    optional: true
-
-  '@ast-grep/napi-linux-x64-gnu@0.36.2':
-    optional: true
-
   '@ast-grep/napi-linux-x64-gnu@0.38.5':
-    optional: true
-
-  '@ast-grep/napi-linux-x64-musl@0.33.0':
-    optional: true
-
-  '@ast-grep/napi-linux-x64-musl@0.36.2':
     optional: true
 
   '@ast-grep/napi-linux-x64-musl@0.38.5':
     optional: true
 
-  '@ast-grep/napi-win32-arm64-msvc@0.33.0':
-    optional: true
-
-  '@ast-grep/napi-win32-arm64-msvc@0.36.2':
-    optional: true
-
   '@ast-grep/napi-win32-arm64-msvc@0.38.5':
-    optional: true
-
-  '@ast-grep/napi-win32-ia32-msvc@0.33.0':
-    optional: true
-
-  '@ast-grep/napi-win32-ia32-msvc@0.36.2':
     optional: true
 
   '@ast-grep/napi-win32-ia32-msvc@0.38.5':
     optional: true
 
-  '@ast-grep/napi-win32-x64-msvc@0.33.0':
-    optional: true
-
-  '@ast-grep/napi-win32-x64-msvc@0.36.2':
-    optional: true
-
   '@ast-grep/napi-win32-x64-msvc@0.38.5':
     optional: true
-
-  '@ast-grep/napi@0.33.0':
-    optionalDependencies:
-      '@ast-grep/napi-darwin-arm64': 0.33.0
-      '@ast-grep/napi-darwin-x64': 0.33.0
-      '@ast-grep/napi-linux-arm64-gnu': 0.33.0
-      '@ast-grep/napi-linux-arm64-musl': 0.33.0
-      '@ast-grep/napi-linux-x64-gnu': 0.33.0
-      '@ast-grep/napi-linux-x64-musl': 0.33.0
-      '@ast-grep/napi-win32-arm64-msvc': 0.33.0
-      '@ast-grep/napi-win32-ia32-msvc': 0.33.0
-      '@ast-grep/napi-win32-x64-msvc': 0.33.0
-
-  '@ast-grep/napi@0.36.2':
-    optionalDependencies:
-      '@ast-grep/napi-darwin-arm64': 0.36.2
-      '@ast-grep/napi-darwin-x64': 0.36.2
-      '@ast-grep/napi-linux-arm64-gnu': 0.36.2
-      '@ast-grep/napi-linux-arm64-musl': 0.36.2
-      '@ast-grep/napi-linux-x64-gnu': 0.36.2
-      '@ast-grep/napi-linux-x64-musl': 0.36.2
-      '@ast-grep/napi-win32-arm64-msvc': 0.36.2
-      '@ast-grep/napi-win32-ia32-msvc': 0.36.2
-      '@ast-grep/napi-win32-x64-msvc': 0.36.2
 
   '@ast-grep/napi@0.38.5':
     optionalDependencies:
@@ -1491,13 +1294,9 @@ snapshots:
       '@ast-grep/napi-win32-ia32-msvc': 0.38.5
       '@ast-grep/napi-win32-x64-msvc': 0.38.5
 
-  '@ast-grep/nursery@0.0.2':
+  '@ast-grep/nursery@0.0.4':
     dependencies:
-      '@ast-grep/napi': 0.33.0
-
-  '@ast-grep/nursery@0.0.3':
-    dependencies:
-      '@ast-grep/napi': 0.36.2
+      '@ast-grep/napi': 0.38.5
 
   '@ast-grep/setup-lang@0.0.3': {}
 
