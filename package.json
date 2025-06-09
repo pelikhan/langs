@@ -11,6 +11,7 @@
     "lint": "biome lint --fix",
     "lint:ci": "biome lint",
     "changeset": "changeset",
+    "version": "changeset version",
     "prepare": "husky"
   },
   "keywords": [],
