@@ -1,0 +1,45 @@
+{
+  "name": "@ast-grep/lang-fsharp",
+  "version": "0.0.1",
+  "description": "ast-grep napi language for F#",
+  "main": "index.js",
+  "scripts": {
+    "build": "tree-sitter build -o parser.so",
+    "source": "node nursery.js source",
+    "prepublishOnly": "node nursery.js source",
+    "postinstall": "node postinstall.js",
+    "test": "node nursery.js test"
+  },
+  "files": [
+    "index.js",
+    "index.d.ts",
+    "postinstall.js",
+    "prebuilds"
+  ],
+  "keywords": ["ast-grep", "ast-grep-lang"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@ast-grep/setup-lang": "workspace:*"
+  },
+  "peerDependencies": {
+    "tree-sitter-cli": "0.25.6"
+  },
+  "peerDependenciesMeta": {
+    "tree-sitter-cli": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "tree-sitter-fsharp": "0.1.0",
+    "@ast-grep/nursery": "workspace:*",
+    "tree-sitter-cli": "0.25.6"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": ["tree-sitter-cli"]
+  }
+}
