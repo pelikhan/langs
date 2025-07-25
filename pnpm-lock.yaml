@@ -146,6 +146,22 @@ importers:
         specifier: 0.3.4
         version: 0.3.4(tree-sitter@0.21.1)
 
+  packages/fsharp:
+    dependencies:
+      '@ast-grep/setup-lang':
+        specifier: workspace:*
+        version: link:../../scripts/setup
+    devDependencies:
+      '@ast-grep/nursery':
+        specifier: workspace:*
+        version: link:../../scripts/nursery
+      tree-sitter-cli:
+        specifier: 0.24.6
+        version: 0.24.6
+      tree-sitter-fsharp:
+        specifier: 0.1.0
+        version: 0.1.0(tree-sitter@0.21.1)
+
   packages/go:
     dependencies:
       '@ast-grep/setup-lang':
@@ -1114,6 +1130,11 @@ packages:
     engines: {node: '>=12.0.0'}
     hasBin: true
 
+  tree-sitter-cli@0.24.6:
+    resolution: {integrity: sha512-FJ9B1XwXt8Auq75NK/6bpeci7avXSk73OMDq4elXHPS4ue11ZFeCrH/anVN/u5BAZjWqFO9nWGLNEdpdZOg+eA==}
+    engines: {node: '>=12.0.0'}
+    hasBin: true
+
   tree-sitter-cli@0.25.6:
     resolution: {integrity: sha512-UhkXRkMPtBgE4OatZtYVtDsT3HFUliqAJcs49XQaZv8d2sbeTzEhpJVpMaCqBR3HGhb1WpyoodaFXQaMuOLPEg==}
     engines: {node: '>=12.0.0'}
@@ -1142,6 +1163,15 @@ packages:
     resolution: {integrity: sha512-Bmaza0305xlrv9o4K+Piqd+pdgoAZp5cDIM2EURsmv0znFEXrXCcRoGOw2q6SsDdX8e6WI43+sQ2ye4xnXASBA==}
     peerDependencies:
       tree-sitter: ^0.21.0
+
+  tree-sitter-fsharp@0.1.0:
+    resolution: {integrity: sha512-TCK+Jkg3qvEe4o6JxqUlE+vUc9lWhHhD7Toglu5Y04/PKa9DgACzqU5Jp9BYZnyhgGLEe+30kVOyFTY/iC/n1Q==}
+    peerDependencies:
+      tree-sitter: ^0.21.0
+      tree_sitter: '*'
+    peerDependenciesMeta:
+      tree_sitter:
+        optional: true
 
   tree-sitter-go@0.23.4:
     resolution: {integrity: sha512-iQaHEs4yMa/hMo/ZCGqLfG61F0miinULU1fFh+GZreCRtKylFLtvn798ocCZjO2r/ungNZgAY1s1hPFyAwkc7w==}
@@ -1851,7 +1881,7 @@ snapshots:
 
   tree-sitter-c@0.23.5:
     dependencies:
-      node-addon-api: 8.3.0
+      node-addon-api: 8.3.1
       node-gyp-build: 4.8.4
 
   tree-sitter-c@0.24.1:
@@ -1860,6 +1890,8 @@ snapshots:
       node-gyp-build: 4.8.4
 
   tree-sitter-cli@0.23.2: {}
+
+  tree-sitter-cli@0.24.6: {}
 
   tree-sitter-cli@0.25.6: {}
 
@@ -1881,6 +1913,12 @@ snapshots:
   tree-sitter-elixir@0.3.4(tree-sitter@0.21.1):
     dependencies:
       node-addon-api: 7.1.1
+      node-gyp-build: 4.8.4
+      tree-sitter: 0.21.1
+
+  tree-sitter-fsharp@0.1.0(tree-sitter@0.21.1):
+    dependencies:
+      node-addon-api: 8.3.1
       node-gyp-build: 4.8.4
       tree-sitter: 0.21.1
 
