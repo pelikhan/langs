@@ -13,19 +13,17 @@
   "files": [
     "index.js",
     "index.d.ts",
-    "type.d.ts",
     "postinstall.js",
-    "src",
     "prebuilds"
   ],
-  "keywords": ["ast-grep", "fsharp", "f#"],
+  "keywords": ["ast-grep", "ast-grep-lang"],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@ast-grep/setup-lang": "workspace:*"
   },
   "peerDependencies": {
-    "tree-sitter-cli": "0.24.6"
+    "tree-sitter-cli": "0.25.6"
   },
   "peerDependenciesMeta": {
     "tree-sitter-cli": {
@@ -35,15 +33,13 @@
   "devDependencies": {
     "tree-sitter-fsharp": "0.1.0",
     "@ast-grep/nursery": "workspace:*",
-    "tree-sitter-cli": "0.24.6"
+    "tree-sitter-cli": "0.25.6"
   },
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
   "pnpm": {
-    "onlyBuiltDependencies": [
-      "tree-sitter-cli"
-    ]
+    "onlyBuiltDependencies": ["tree-sitter-cli"]
   }
 }
