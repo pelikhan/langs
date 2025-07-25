@@ -47,6 +47,22 @@ importers:
         specifier: 0.24.6
         version: 0.24.6
 
+  packages/fsharp:
+    dependencies:
+      '@ast-grep/setup-lang':
+        specifier: workspace:*
+        version: link:../../scripts/setup
+    devDependencies:
+      '@ast-grep/nursery':
+        specifier: workspace:*
+        version: link:../../scripts/nursery
+      tree-sitter-cli:
+        specifier: 0.24.6
+        version: 0.24.6
+      tree-sitter-fsharp:
+        specifier: 0.1.0
+        version: 0.1.0(tree-sitter@0.21.1)
+
   packages/sql:
     dependencies:
       '@ast-grep/setup-lang':
@@ -366,6 +382,15 @@ packages:
     engines: {node: '>=12.0.0'}
     hasBin: true
 
+  tree-sitter-fsharp@0.1.0:
+    resolution: {integrity: sha512-TCK+Jkg3qvEe4o6JxqUlE+vUc9lWhHhD7Toglu5Y04/PKa9DgACzqU5Jp9BYZnyhgGLEe+30kVOyFTY/iC/n1Q==}
+    peerDependencies:
+      tree-sitter: ^0.21.0
+      tree_sitter: '*'
+    peerDependenciesMeta:
+      tree_sitter:
+        optional: true
+
   tree-sitter-html@0.20.4:
     resolution: {integrity: sha512-IUE82HgrxGXMiq5xYkAV6VYt+txcqIo4yPUEvq43UIabCKeEUqDOEOmCE9W9mQ2c3392VJEXOPzlpd7VuX1c6Q==}
     peerDependencies:
@@ -557,6 +582,12 @@ snapshots:
       node-gyp-build: 4.8.4
 
   tree-sitter-cli@0.24.6: {}
+
+  tree-sitter-fsharp@0.1.0(tree-sitter@0.21.1):
+    dependencies:
+      node-addon-api: 8.3.0
+      node-gyp-build: 4.8.4
+      tree-sitter: 0.21.1
 
   tree-sitter-html@0.20.4(tree-sitter@0.21.1):
     dependencies:

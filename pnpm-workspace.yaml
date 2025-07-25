@@ -1,4 +1,6 @@
 packages:
-  - 'packages/*'
-  - 'scripts/*'
+  - packages/*
+  - scripts/*
 
+onlyBuiltDependencies:
+  - tree-sitter-fsharp
