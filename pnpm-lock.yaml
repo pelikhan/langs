@@ -156,8 +156,8 @@ importers:
         specifier: workspace:*
         version: link:../../scripts/nursery
       tree-sitter-cli:
-        specifier: 0.24.6
-        version: 0.24.6
+        specifier: 0.25.6
+        version: 0.25.6
       tree-sitter-fsharp:
         specifier: 0.1.0
         version: 0.1.0(tree-sitter@0.21.1)
@@ -1130,11 +1130,6 @@ packages:
     engines: {node: '>=12.0.0'}
     hasBin: true
 
-  tree-sitter-cli@0.24.6:
-    resolution: {integrity: sha512-FJ9B1XwXt8Auq75NK/6bpeci7avXSk73OMDq4elXHPS4ue11ZFeCrH/anVN/u5BAZjWqFO9nWGLNEdpdZOg+eA==}
-    engines: {node: '>=12.0.0'}
-    hasBin: true
-
   tree-sitter-cli@0.25.6:
     resolution: {integrity: sha512-UhkXRkMPtBgE4OatZtYVtDsT3HFUliqAJcs49XQaZv8d2sbeTzEhpJVpMaCqBR3HGhb1WpyoodaFXQaMuOLPEg==}
     engines: {node: '>=12.0.0'}
@@ -1890,8 +1885,6 @@ snapshots:
       node-gyp-build: 4.8.4
 
   tree-sitter-cli@0.23.2: {}
-
-  tree-sitter-cli@0.24.6: {}
 
   tree-sitter-cli@0.25.6: {}
 
