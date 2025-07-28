@@ -10,12 +10,7 @@
     "postinstall": "node postinstall.js",
     "test": "node nursery.js test"
   },
-  "files": [
-    "index.js",
-    "index.d.ts",
-    "postinstall.js",
-    "prebuilds"
-  ],
+  "files": ["index.js", "index.d.ts", "postinstall.js", "prebuilds"],
   "keywords": ["ast-grep", "ast-grep-lang"],
   "author": "",
   "license": "ISC",

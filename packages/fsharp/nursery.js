@@ -8,15 +8,15 @@ setup({
   treeSitterPackage: 'tree-sitter-fsharp',
   src: 'fsharp/src',
   languageRegistration: fsharp,
-  testRunner: (parse) => {
+  testRunner: parse => {
     const sg = parse('let x = 42')
     const root = sg.root()
     // Check that we can parse F# code correctly
     assert.equal(root.kind(), 'file')
-    
+
     // Get the first child which should be the value declaration
     const children = root.children()
     assert.equal(children.length, 1)
     assert.equal(children[0].kind(), 'value_declaration')
-  }
+  },
 })

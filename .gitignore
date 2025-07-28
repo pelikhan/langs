@@ -137,6 +137,7 @@ packages/**/parser.so
 packages/**/type.d.ts
 # do not include copied directories
 packages/**/src
+packages/**/common
 # ignore generated ts files in scripts
 scripts/**/*.js
 scripts/**/*.d.ts
