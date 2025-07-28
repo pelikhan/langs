@@ -6,6 +6,7 @@ setup({
   dirname: __dirname,
   name: 'fsharp',
   treeSitterPackage: 'tree-sitter-fsharp',
+  src: 'fsharp/src',
   languageRegistration: fsharp,
   testRunner: (parse) => {
     const sg = parse('let x = 42')
